@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: ../app
+      dockerfile: ../docker/Dockerfile
+    ports:
+      - "3100:3100"
+    volumes:
+      - ../app:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true

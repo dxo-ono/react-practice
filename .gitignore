@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+app/build/
+app/dist/
+app/.next/
+app/.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Docker
+docker/*.pid
+docker/*.sock
+
+# Logs
+logs/
+*.log
+
+# その他
+coverage/
