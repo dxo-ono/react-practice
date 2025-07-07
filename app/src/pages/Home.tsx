@@ -1,5 +1,5 @@
 import React from "react";
-import KeyVisual from "../component/Keyvisual"; // ファイル名の大文字小文字に注意
+import KeyVisual from "../components/Keyvisual";
 
 const Home: React.FC = () => {
   return (
@@ -8,5 +8,6 @@ const Home: React.FC = () => {
     </div>
   );
 };
+
 
 export default Home;
