@@ -3,6 +3,17 @@
   --color-black-900: #000000;
   --color-white-900: #ffffff;
 
+  /*color-gradient 追加*/
+  --gradient-white: linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%);
+  --Gradient-Vivid: linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%,
+                                           var(--Master-Sub-Blue, #82BEF0) 50%,
+                                           var(--Master-Sub-Purple, #D2A5EB) 100%);
+
+ /* font-color 追加 */
+  --style-text-black: #434343;
+  --style-text-white: #FFFFFF;
+  --style-text-gray: #6B6B6B;
+
   /* font-weight */
   --font-weight-regular: 400;
   --font-weight-md: 500;
