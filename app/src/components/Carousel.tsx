@@ -79,7 +79,6 @@ const Carousel = () => {
   };
   }, []);
 
-
   return (
     <div className="relative w-[1000px] mx-auto py-8">
       {/* スライドトラック */}
@@ -148,7 +147,7 @@ const Carousel = () => {
 </div>
 
 
-      {/* ✅ ここにナビゲーションボタン外側配置 */}
+      {/* ナビゲーションボタン外側配置 */}
       <div className="absolute -bottom-10 left-0 flex gap-2">
         <button
           onClick={handlePrev}
