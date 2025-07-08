@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useState, useRef, useEffect } from 'react';
-
 import newyearImg from '../assets/images/newyear.png';
 
 const slides = [
@@ -134,7 +133,7 @@ const Carousel = () => {
         {/* 日付・アイコン・カテゴリ */}
         <div className="flex gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-2">
-            {/* SVGアイコンなど挿入 */}
+            {/* SVGアイコン */}
             <svg width="16" height="16" fill="currentColor"><circle cx="8" cy="8" r="8" /></svg>
             <span>2025.07.08</span>
           </div>
