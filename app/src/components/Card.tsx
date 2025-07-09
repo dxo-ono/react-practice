@@ -8,6 +8,7 @@ type CardProps = {
   date: string;
   tag?: string;
   imageUrl?: string;
+  className: string;
 };
 
 const Card: React.FC<CardProps> = ({ title, description, date, tag, imageUrl }) => {
