@@ -21,8 +21,21 @@ module.exports = {
         'color-black-900': 'var(--color-black-900)',
         'color-white-900': 'var(--color-white-900)',
 
+        'Master-Sub-Green': 'var(--Master-Sub-Green)',
+        'Master-Sub-Blue': 'var(--Master-Sub-Blue)',
+        'Master-Sub-Purple': 'var(--Master-Sub-Purple)',
+
         // グラデーション背景など（※直接ユーティリティには使えないのでstyleで補完）
         'gradient-white': 'var(--gradient-white)',
+
+        // 背景用の白
+        'style-background-white': '#fff',
+      },
+
+      // Card背景色
+      backgroundImage: {
+        'gradient-vivid': 'linear-gradient(90deg, var(--Master-Sub-Green) 0%, var(--Master-Sub-Blue) 50%, var(--Master-Sub-Purple) 100%)',
+        'gradient-soft': 'linear-gradient(0deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.92) 100%), linear-gradient(90deg, var(--Master-Sub-Green) 0%, var(--Master-Sub-Blue) 50%, var(--Master-Sub-Purple) 100%)',
       },
 
       // フォントウェイト（数値で指定）
