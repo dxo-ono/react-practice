@@ -21,6 +21,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: newyearImg,
   },
   {
@@ -28,6 +29,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: memberImg,
   },
     {
@@ -35,6 +37,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: charityImg,
   },
   {
@@ -42,6 +45,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: DXOImg,
   },
   {
@@ -49,6 +53,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: aboutImg,
   },
   {
@@ -56,6 +61,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: runImg,
   },
     {
@@ -63,6 +69,7 @@ const cardData = [
     title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: meetingImg,
   },
   {
@@ -70,6 +77,7 @@ const cardData = [
      title:'も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回',
     description: 'にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと',
     date: '2025-12-30',
+    author: '山田太郎',
     imageUrl: womanIMG,
   },
 ];
@@ -88,22 +96,25 @@ const gradientSoftBg = css`
 `;
 
 
+
+
 const Cards: React.FC = () => {
   return (
     <div className="flex flex-col font-zen items-center">
       {/* 全体を囲むラッパー */}
       <div
-        className="max-w-[1280px] px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
+        className="relative w-[1280px] overflow-visible px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
         css={gradientSoftBg}
       >
+        <div className="flex flex-col items-start gap-[40px]">
           {/* ニュースセクション */}
-          <div className="flex items-start gap-[20px] pt-[]">
+          <div className="flex items-start gap-[20px]">
         {/* ── グラデーションボーダー ── */}
           <span
-            className="w-[3px] h-[64px] rounded-[100px] bg-gradient-vivid"
-            css={css`
-              background: var(--Gradient-Vivid);
-            `}
+            className="w-[3px] h-[64px] rounded-[100px]"
+              css={css`
+                    background: var(--Gradient-Vivid-y);
+                  `}
           />
           {/* ── タイトル & 説明 ── */}
           <div>
@@ -116,44 +127,50 @@ const Cards: React.FC = () => {
           </div>
         </div>
         {/* カード1行目 */}
-        <div className="flex flex-nowrap gap-[32px]">
+        <div className="w-full overflow-visible">
+        <div className="flex gap-[32px]">
           {firstRow.map((card) => (
             <Card
               key={card.id}
               {...card}
-              className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+              className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px]  border-[color:var(--Gradient-Vivid)] bg-style-background-white"
             />
           ))}
+          </div>
+        </div>
         </div>
 
-        <div className="flex items-start gap-[20px] pt-[80px]">
+        <div className="flex flex-col items-start gap-[40px]">
+        <div className="flex items-start gap-[20px]">
           {/* ── グラデーションボーダー ── */}
           <span
             className="w-[3px] h-[64px] rounded-[100px] bg-gradient-vivid"
-            /* もし Tailwind で `bg-gradient-vivid` が自動生成されない場合だけ Emotion で補完 */
             css={css`
-              background: var(--Gradient-Vivid);
-            `}
+                    background: var(--Gradient-Vivid-y);
+                  `}
           />
           {/* ── タイトル & 説明 ── */}
           <div>
             <h2 className="font-md text-md text-style-text-black">
               インタビュー
             </h2>
-            <p className="text-style-text-gray pb-[40px]">
+            <p className="text-style-text-gray">
               DXOで活躍する社員たちの声をお届けします。
             </p>
           </div>
         </div>
             {/* カード2行目 */}
-            <div className="flex flex-nowrap gap-[32px]">
+            <div className="w-full overflow-visible">
+            <div className="flex gap-[32px]">
               {secondRow.map((card) => (
                 <Card
                   key={card.id}
                   {...card}
-                  className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+                  className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
                 />
               ))}
+            </div>
+            </div>
             </div>
       </div>
     </div>
