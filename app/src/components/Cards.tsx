@@ -1,5 +1,8 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import Card from './Card';
+import { css } from '@emotion/react';
+
 
 // 画像インポート
 import newyearImg from "../assets/images/newyear.png";
@@ -72,51 +75,91 @@ const cardData = [
 ];
 
 
-// 4Card1列が2行
+// 4Card1列が2行 1～4で1行、5～8で2行
 const firstRow = cardData.slice(0, 4);
 const secondRow = cardData.slice(4, 8);
+
+// グラデ
+const gradientSoftBg = css`
+  background: var(--Gradient-Soft,
+    linear-gradient(0deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%),
+    linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%, var(--Master-Sub-Blue, #82BEF0) 50%, var(--Master-Sub-Purple, #D2A5EB) 100%)
+  );
+`;
 
 
 const Cards: React.FC = () => {
   return (
-        <div className="flex-col gap-6 px-4">
-      {/* セクションタイトル */}
-      <h2 className=" text-2xl md:text-3xl font-bold text-style-text-black">
-        ニュース
-      </h2>
-      {/* セクション説明文 */}
-      <p className="text-base md:text-lg text-style-text-gray max-w-2xl">
-        DXOの最新の取り組みや成果をご紹介します。
-      </p>
-
-
-    <div className="flex flex-col gap-4 bg-gradient-soft p-6 rounded-[24px]">
-        {/* 1行目 */}
-        <div className="flex flex-nowrap gap-4 justify-center">
-            {firstRow.map((card) => (
-            <Card key={card.id} {...card} className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"/>
-            ))}
+    <div className="flex flex-col font-zen items-center">
+      {/* 全体を囲むラッパー */}
+      <div
+        className="max-w-[1280px] px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
+        css={gradientSoftBg}
+      >
+          {/* ニュースセクション */}
+          <div className="flex items-start gap-[20px] pt-[]">
+        {/* ── グラデーションボーダー ── */}
+          <span
+            className="w-[3px] h-[64px] rounded-[100px] bg-gradient-vivid"
+            css={css`
+              background: var(--Gradient-Vivid);
+            `}
+          />
+          {/* ── タイトル & 説明 ── */}
+          <div>
+            <h2 className="font-md text-md text-style-text-black">
+              ニュース
+            </h2>
+            <p className="text-style-text-gray pb-[40px]">
+              DXOの最新の取り組みや成果をご紹介します。
+            </p>
+          </div>
+        </div>
+        {/* カード1行目 */}
+        <div className="flex flex-nowrap gap-[32px]">
+          {firstRow.map((card) => (
+            <Card
+              key={card.id}
+              {...card}
+              className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+            />
+          ))}
         </div>
 
-        {/* セクションタイトル */}
-        <h2 className="text-2xl md:text-3xl font-bold text-style-text-black">
-            インタビュー
-        </h2>
-        {/* セクション説明文 */}
-        <p className="text-base md:text-lg text-style-text-gray text-center max-w-2xl">
-            DXOで活躍する社員たちの声をお届けします。
-        </p>
-
-        {/* 2行目 */}
-        <div className="flex flex-nowrap gap-4 justify-center">
-        {secondRow.map((card) => (
-            <Card key={card.id} {...card} className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"/>
-        ))}
+        <div className="flex items-start gap-[20px] pt-[80px]">
+          {/* ── グラデーションボーダー ── */}
+          <span
+            className="w-[3px] h-[64px] rounded-[100px] bg-gradient-vivid"
+            /* もし Tailwind で `bg-gradient-vivid` が自動生成されない場合だけ Emotion で補完 */
+            css={css`
+              background: var(--Gradient-Vivid);
+            `}
+          />
+          {/* ── タイトル & 説明 ── */}
+          <div>
+            <h2 className="font-md text-md text-style-text-black">
+              インタビュー
+            </h2>
+            <p className="text-style-text-gray pb-[40px]">
+              DXOで活躍する社員たちの声をお届けします。
+            </p>
+          </div>
         </div>
+            {/* カード2行目 */}
+            <div className="flex flex-nowrap gap-[32px]">
+              {secondRow.map((card) => (
+                <Card
+                  key={card.id}
+                  {...card}
+                  className="w-[320px] h-auto flex flex-col items-center rounded-[12px] border-[3px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+                />
+              ))}
+            </div>
+      </div>
     </div>
-    </div>
-
-    );
+  );
 };
+
+
 
 export default Cards;
