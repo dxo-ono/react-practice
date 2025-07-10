@@ -2,6 +2,7 @@ import React from "react";
 import KeyVisual from "../components/Keyvisual";
 import PickupSection from "../components/PickupSection";
 import Cards from "../components/Cards";
+import Button from "../components/Button";
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <KeyVisual />
       <PickupSection />
       <Cards />
+      <Button />
     </div>
   );
 };
