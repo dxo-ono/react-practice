@@ -3,7 +3,7 @@ import React from "react";
 import { css } from "@emotion/react";
 
 type ButtonProps = {
-  bgImage: string;
+  bgImage: string; // 背景画像props
   onClick?: () => void;
   className?: string;
   children?: React.ReactNode;
