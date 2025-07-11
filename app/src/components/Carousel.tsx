@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from '@emotion/react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide, SplideRef } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import newyearImg from '../assets/images/newyear.png';
+import { useRef } from 'react';
 
 const slides = [
   { id: 1, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
@@ -15,37 +16,55 @@ const cardRightShadow = css`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 `;
 
-// グローバルスタイル
+// // 矢印SVG
+// // ←
+// const PrevArrowIcon =() => (
+//   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+//   <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
+//   <path d="M17.7147 8L10.2861 15.4286L17.7147 22.8571" stroke="white" stroke-width="2.28571" stroke-linecap="round" stroke-linejoin="round"/>
+// </svg>
+// );
+// // →
+// const NextArrowIcon = () => (
+//   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+//     <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
+//     <path d="M13.2863 22.8572L20.7148 15.4286L13.2863 8.00003" stroke="white" stroke-width="2.28571" stroke-linecap="round" stroke-linejoin="round"/>
+//   </svg>
+// );
+
+
+
+// // グローバルスタイル
 const globalSplideStyle = css`
 .splide__container {
-    position: relative;
-    width: 1000px;
-    margin: 0 auto;
-    overflow: visible;
+  height: auto;
+  position: relative;
+  width: 1000px;
+  overflow: visible;
 }
 
 .splide__arrows,
 .splide__pagination {
   position: absolute;
-  bottom: -48px;
   height: 28px;
   z-index: 20;
   pointer-events: auto;
   display: flex;
-  gap: 8px;
 }
 
-/* arrows を中央スライドの画像左端（480px幅の左端）に合わせて左に固定 */
+/* arrows左に固定 */
 .splide__arrows {
-  left: calc(50vw - 460px);
+  left: calc(50vw - 520px);
+  width: 104px;
+  height: 64px;
+  bottom: -53px;
 }
 
   .splide__arrow {
+    display: flex;
     width: 32px;
     height: 32px;
-    border-radius: 9999px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
     align-items: center;
     justify-content: center;
     color: #2D72E7;
@@ -54,7 +73,7 @@ const globalSplideStyle = css`
 
 .splide__pagination {
   position: absolute;
-  bottom: -48px;
+  bottom: -33px;
   right: -900px;
   display: flex !important;
   gap: 8px;
@@ -75,6 +94,7 @@ const globalSplideStyle = css`
 }
 `;
 
+// カレンダーアイコンSVG画像定義
 const CalendarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -101,6 +121,8 @@ const CalendarIcon = () => (
 );
 
 
+
+
 const Carousel = () => {
   return (
     <div style={{ width: '100vw', overflow: 'visible' }}>
@@ -108,14 +130,16 @@ const Carousel = () => {
       <Splide
         options={{
           type: 'loop',
-    type: 'loop',
-    perPage: 1,
-    fixedWidth: 1000,
-    gap: '80px',
-    focus: 'center',
-    padding: 0,       // 余白はここでなくコンテナで調整
-    arrows: true,
-    pagination: true,
+          perPage: 1,
+          fixedWidth: 1000,
+          gap: '80px',
+          focus: 'center',
+          padding: 0,
+          autoplay: true,
+          arrows: true,
+          pagination: true,
+          interval: 4000,
+          pauseOnHover: true,
         }}
         aria-label="ピックアップスライダー"
       >
@@ -151,17 +175,17 @@ const Carousel = () => {
                   {slide.title}
                 </div>
 
-                      <div className="text-base leading-[160%] tracking-[0.8px] w-[452px] text-ellipsis overflow-hidden">
+                      <div className="text-base leading-[160%] tracking-[0.8px] w-[452px] text-ellipsis overflow-hidden font-regular">
                         でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
                       </div>
                       {/* 日付・カテゴリ */}
-                    <div className="flex justify-between text-sm text-gray-500 pt-[12px]"
+                    <div className="flex justify-between text-sm text-gray pt-[12px] font-regular"
                       style={{borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)"}}>
                         <div className="flex items-center gap-2">
                           <CalendarIcon />
                           <span>2025.07.08</span>
                         </div>
-                      <div className="text-[#2D72E7]">#DXO通信</div>
+                      <div className="text-gray">#DXO通信</div>
 
                 </div>
               </div>
