@@ -2,8 +2,6 @@
 import React from 'react';
 import Card from './Card';
 import { css } from '@emotion/react';
-
-
 // 画像インポート
 import newyearImg from "../assets/images/newyear.png";
 import memberImg from "../assets/images/member@2x.png";
@@ -100,7 +98,7 @@ const gradientSoftBg = css`
 
 const Cards: React.FC = () => {
   return (
-    <div className="flex flex-col font-zen items-center">
+    <div className="flex flex-col font-zen items-center" id="news">
       {/* 全体を囲むラッパー */}
       <div
         className="relative w-[1280px] overflow-visible px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
@@ -151,7 +149,7 @@ const Cards: React.FC = () => {
           />
           {/* ── タイトル & 説明 ── */}
           <div>
-            <h2 className="font-md text-md text-style-text-black">
+            <h2 className="font-md text-md text-style-text-black" id="interview">
               インタビュー
             </h2>
             <p className="text-style-text-gray">
