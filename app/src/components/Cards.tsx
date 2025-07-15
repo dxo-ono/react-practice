@@ -98,10 +98,10 @@ const gradientSoftBg = css`
 
 const Cards: React.FC = () => {
   return (
-    <div className="flex flex-col font-zen items-center" id="news">
+    <div className="flex flex-col font-zen items-start" id="news">
       {/* 全体を囲むラッパー */}
       <div
-        className="relative w-[1280px] overflow-visible px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
+        className="relative max-w-[1280px] w-[full] px-[60px] py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
         css={gradientSoftBg}
       >
         <div className="flex flex-col items-start gap-[40px]">
@@ -125,13 +125,13 @@ const Cards: React.FC = () => {
           </div>
         </div>
         {/* カード1行目 */}
-        <div className="w-full overflow-visible">
+        <div className="w-full">
         <div className="flex gap-[32px]">
           {firstRow.map((card) => (
             <Card
               key={card.id}
               {...card}
-              className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px]  border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+              className="w-[320px] h-[auto] flex-shrink-0 flex flex-col items-center rounded-[12px]  border-[color:var(--Gradient-Vivid)] bg-style-background-white"
             />
           ))}
           </div>
@@ -158,7 +158,7 @@ const Cards: React.FC = () => {
           </div>
         </div>
             {/* カード2行目 */}
-            <div className="w-full overflow-visible">
+            <div className="w-full">
             <div className="flex gap-[32px]">
               {secondRow.map((card) => (
                 <Card

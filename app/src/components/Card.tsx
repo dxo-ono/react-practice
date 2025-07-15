@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ title, description, date, tag, imageUrl, cl
     <div
       className={`rounded-[12px] shadow transition hover:shadow-md ${className} flex h-[220px] flex-col items-start self-stretch`}
       css={css`
-        background-color: var(--Style-Background-White);
+        background: var(--Style-Background-White, #FFF);;
         transition: transform 0.2s;
         &:hover {
           transform: translateY(-4px);
