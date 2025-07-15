@@ -13,17 +13,39 @@ const gradientVivid = css`
 
 const TopLink: React.FC = () => {
   return (
-    <div className="block sm:hidden px-[20px] py-[20px] sticky top-0"
+    <div className="sm:hidden w-full h-[60px] px-[20px] py-[0px] top-0 flex items-center justify-between text-base font-md text-white font-zen gap-auto"
       css={css`
         ${gradientVivid};
         background: var(--Gradient-Vivid);
       `}
       >
-      <nav className="flex justify-around text-base font-md text-white font-zen">
-        <a href="#pickup" className="hover:underline">ピックアップ</a>
-        <a href="#news" className="hover:underline">ニュース</a>
-        <a href="#interview" className="hover:underline">インタビュー</a>
-      </nav>
+        {/* ピックアップ */}
+        <a href="#pickup" className="hover:underline">
+          <div className="flex flex-col w-[100px] justify-center items-center gap-[2px] flex-shrink-0">
+            ピックアップ
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+        {/* ニュース */}
+        <a href="#news" className="hover:underline">
+          <div className="flex flex-col w-[100px] justify-center items-center gap-[2px] flex-shrink-0">
+            ニュース
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+        {/* インタビュー */}
+        <a href="#interview" className="hover:underline">
+          <div className="flex flex-col w-[100px] justify-center items-center gap-[2px] flex-shrink-0">
+            インタビュー
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          </a>
     </div>
   );
 };
