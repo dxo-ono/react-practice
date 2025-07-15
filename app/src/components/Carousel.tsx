@@ -3,7 +3,6 @@ import { css, Global } from '@emotion/react';
 import { Splide, SplideSlide, SplideRef } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import newyearImg from '../assets/images/newyear.png';
-import { useRef } from 'react';
 
 const slides = [
   { id: 1, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
@@ -11,90 +10,28 @@ const slides = [
   { id: 3, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
 ];
 
-// スタイル定義
+// ボックスシャドウ
 const cardRightShadow = css`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 `;
 
 // // 矢印SVG
-// // ←
+// // 前へ
 // const PrevArrowIcon =() => (
 //   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
 //   <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
-//   <path d="M17.7147 8L10.2861 15.4286L17.7147 22.8571" stroke="white" stroke-width="2.28571" stroke-linecap="round" stroke-linejoin="round"/>
+//   <path d="M17.7147 8L10.2861 15.4286L17.7147 22.8571" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
 // </svg>
 // );
-// // →
+// // 後へ
 // const NextArrowIcon = () => (
 //   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
 //     <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
-//     <path d="M13.2863 22.8572L20.7148 15.4286L13.2863 8.00003" stroke="white" stroke-width="2.28571" stroke-linecap="round" stroke-linejoin="round"/>
+//     <path d="M13.2863 22.8572L20.7148 15.4286L13.2863 8.00003" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
 //   </svg>
 // );
 
-
-
-// // グローバルスタイル
-const globalSplideStyle = css`
-.splide__container {
-  height: auto;
-  position: relative;
-  width: 1000px;
-  overflow: visible;
-}
-
-.splide__arrows,
-.splide__pagination {
-  position: absolute;
-  height: 28px;
-  z-index: 20;
-  pointer-events: auto;
-  display: flex;
-}
-
-/* arrows左に固定 */
-.splide__arrows {
-  left: calc(50vw - 520px);
-  width: 104px;
-  height: 64px;
-  bottom: -53px;
-}
-
-  .splide__arrow {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    color: #2D72E7;
-    font-size: 16px;
-  }
-
-.splide__pagination {
-  position: absolute;
-  bottom: -33px;
-  right: -900px;
-  display: flex !important;
-  gap: 8px;
-  z-index: 20;
-}
-
-.splide__pagination__page {
-  width: 28px;
-  height: 2px;
-  border-radius: 100px;
-  background: #9D9D9D;
-  opacity: 1;
-  transition: background 0.3s ease;
-}
-
-.splide__pagination__page.is-active {
-  background: #2D72E7;
-}
-`;
-
-// カレンダーアイコンSVG画像定義
+// カレンダーアイコンSVG
 const CalendarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +58,68 @@ const CalendarIcon = () => (
 );
 
 
+// // グローバルスタイル
+const globalSplideStyle = css`
+.splide__container {
+  height: auto;
+  position: relative;
+  width: 1000px;
+  overflow: visible;
+}
 
+.splide__arrows,
+.splide__pagination {
+  position: absolute;
+  height: 28px;
+  z-index: 20;
+  pointer-events: auto;
+  display: flex;
+}
+
+/* arrows左に固定 */
+.splide__arrows {
+  left: calc(50vw - 520px);
+  width: 130px;
+  height: 64px;
+  bottom: -53px;
+  gap: 24px;
+  z-index: 30;
+}
+
+  .splide__arrow {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    color: #9D9D9D;
+    font-size: 16px;
+  }
+
+.splide__pagination {
+  position: absolute;
+  bottom: -33px;
+  right: -900px;
+  display: flex !important;
+  gap: 8px;
+  z-index: 20;
+}
+
+.splide__pagination__page {
+  width: 28px;
+  height: 2px;
+  border-radius: 100px;
+  background: #9D9D9D;
+  color: white;
+  opacity: 1;
+  transition: background 0.3s ease;
+}
+
+.splide__pagination__page.is-active {
+  background: #2D72E7;
+}
+`;
 
 const Carousel = () => {
   return (
