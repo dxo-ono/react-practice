@@ -5,8 +5,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
-
   theme: {
+      // ブレイクポイント
+      screens: {
+        xs: { max: '320px' },
+        sp: { max: '390px' },
+        max800: { max: '800px' },
+      },
+
     extend: {
       // フォントファミリー
       fontFamily: {
@@ -17,13 +23,17 @@ module.exports = {
       colors: {
         'style-text-black': 'var(--style-text-black)',
         'style-text-white': 'var(--style-text-white)',
-        'style-text-gray': 'var(--style-text-gray)',
+        'style-text-gray': 'var(--style-text-gray, #6B6B6B)',
+
+        'style-object-lightgrey': 'var(--style-object-lightgrey, #9D9D9D)',
+        'style-object-silver': 'var(--style-object-silver, #C4C4C4)',
+
         'color-black-900': 'var(--color-black-900)',
         'color-white-900': 'var(--color-white-900)',
 
-        'Master-Sub-Green': 'var(--Master-Sub-Green)',
-        'Master-Sub-Blue': 'var(--Master-Sub-Blue)',
-        'Master-Sub-Purple': 'var(--Master-Sub-Purple)',
+        'master-sub-green': 'var(--master-sub-green)',
+        'master-sub-blue': 'var(--master-sub-blue)',
+        'master-sub-purple': 'var(--master-sub-purple)',
 
         // グラデーション背景など（※直接ユーティリティには使えないのでstyleで補完）
         'gradient-white': 'var(--gradient-white)',
