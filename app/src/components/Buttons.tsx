@@ -14,7 +14,7 @@ type ButtonsProps = {
 const Buttons: React.FC<ButtonsProps> = ({ direction = 'row' }) => {
     const layoutClass = direction === 'col'
     ? 'flex-col gap-[24px]'
-    : 'flex-row gap-[24px]';
+    : 'flex-col md:flex-row gap-[24px]';
 
   return (
     <div className={`flex ${layoutClass} justify-center items-center py-[80px]`}>
