@@ -57,7 +57,6 @@ const CalendarIcon = () => (
   </svg>
 );
 
-
 // // グローバルスタイル
 const globalSplideStyle = css`
 .splide__container {
@@ -65,45 +64,22 @@ const globalSplideStyle = css`
   position: relative;
   width: 1000px;
   overflow: visible;
-}
 
-.splide__arrows,
-.splide__pagination {
-  position: absolute;
-  height: 28px;
-  z-index: 20;
-  pointer-events: auto;
-  display: flex;
-}
-
-/* arrows左に固定 */
-.splide__arrows {
-  left: calc(50vw - 520px);
-  width: 130px;
-  height: 64px;
-  bottom: -53px;
-  gap: 24px;
-  z-index: 30;
-}
-
-  .splide__arrow {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    color: #9D9D9D;
-    font-size: 16px;
+  @media (max-width: 767px) {
+    width: 100%;
   }
+}
 
-.splide__pagination {
-  position: absolute;
-  bottom: -33px;
-  right: -900px;
-  display: flex !important;
-  gap: 8px;
-  z-index: 20;
+/* ===== 共通スタイル ===== */
+.splide__arrow {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  color: #9D9D9D;
+  font-size: 16px;
 }
 
 .splide__pagination__page {
@@ -119,7 +95,63 @@ const globalSplideStyle = css`
 .splide__pagination__page.is-active {
   background: #2D72E7;
 }
+
+/* ===== sp: 左下・右下に分けて配置 ===== */
+@media (max-width: 767px) {
+  .splide__arrows {
+    position: absolute;
+    bottom: -50px;
+    left: 15%;
+    transform: none;
+    z-index: 30;
+    display: flex;
+    gap: 24px;
+    height: 32px;
+  }
+
+  .splide__pagination {
+    position: absolute !important;
+    bottom: -40px;
+    right: -240px;
+    display: flex !important;
+    gap: 8px;
+    z-index: 20;
+  }
+}
+
+/* ===== md以上: 従来通りの配置 ===== */
+@media (min-width: 768px) {
+  .splide__arrows {
+    position: absolute;
+    bottom: -53px;
+    left: calc(50vw - 455px);
+    transform: none;
+    z-index: 30;
+    display: flex;
+    gap: 24px;
+    height: 64px;
+  }
+
+  .splide__pagination {
+    position: absolute !important;
+    bottom: -33px;
+    right: -900px;
+    display: flex !important;
+    gap: 8px;
+    z-index: 20;
+  }
+}
 `;
+
+// 2行目まで表示
+const multiLineClamp2 = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+`;
+
+
 
 const Carousel = () => {
   return (
@@ -143,10 +175,12 @@ const Carousel = () => {
       >
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
-            <div className="relative w-[1000px] h-[336px]">
+            <div className="relative w-full h-[497px] md:w-[1000px] md:h-[336px]">
               {/* 画像(左上) */}
               <div
-                className="absolute top-0 left-0 w-[480px] h-[270px] bg-cover bg-center rounded-[20px] shadow-md"
+                className="absolute bg-cover bg-center rounded-[20px] shadow-md
+                           top-[0px] left-[290px] flex-shrink-0
+                           md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
                 css={css`
                   background-image: url(${slide.image});
                   z-index: 10;
@@ -154,7 +188,10 @@ const Carousel = () => {
               />
               {/* テキスト（右下） */}
               <div
-                className="absolute bottom-[20px] left-[448px] h-auto w-auto bg-white rounded-[16px] pl-[60px] pr-[40px] py-[28px] flex flex-col gap-[20px] shadow-xl"
+                  className="
+                      absolute flex flex-col gap-[12px] md:gap-[20px] bg-white shadow-xl rounded-[16px]
+                      w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]  // -sp位置
+                      md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
                 css={css`
                   ${cardRightShadow};
                   z-index: 1;
@@ -162,7 +199,7 @@ const Carousel = () => {
               >
                 {/* タイトル */}
                 <div
-                  className="text-black text-[20px] leading-[160%] tracking-[0.8px]"
+                  className="text-style-text-black text-[20px] leading-[160%] tracking-[0.8px]"
                   css={css`
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -172,10 +209,12 @@ const Carousel = () => {
                 >
                   {slide.title}
                 </div>
-
-                      <div className="text-base leading-[160%] tracking-[0.8px] w-[452px] text-ellipsis overflow-hidden font-regular">
+                  <div className="text-base leading-[160%] tracking-[0.8px]
+                                  w-full md:w-[452px] overflow-hidden font-regular"
+                                  css={multiLineClamp2}
+                  >
                         でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
-                      </div>
+                  </div>
                       {/* 日付・カテゴリ */}
                     <div className="flex justify-between text-sm text-gray pt-[12px] font-regular"
                       style={{borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)"}}>
