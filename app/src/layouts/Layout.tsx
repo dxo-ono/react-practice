@@ -9,7 +9,7 @@ function Layout() {
     <>
       <Header />
       <TopLink />
-      <main className="text-black-800 min-w-[390px] md:mx-auto w-full">
+      <main className="min-w-[390px] md:mx-auto w-full">
         <Outlet />
       </main>
       <Footer />

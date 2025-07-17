@@ -6,14 +6,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
     // ブレイクポイント
     screens: {
       xs: { max: "320px" },
       sp: { max: "390px" },
       max800: { max: "800px" },
     },
-
-    extend: {
       // フォントファミリー
       fontFamily: {
         zen: ['"Zen Kaku Gothic New"', "sans-serif"],

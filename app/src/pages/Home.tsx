@@ -6,7 +6,7 @@ import Buttons from "../components/Buttons";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-black">
+    <div className="min-h-screen flex flex-col bg-white">
       <KeyVisual />
       <PickupSection />
       <Cards />

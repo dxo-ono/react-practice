@@ -65,13 +65,11 @@ const KeyVisual: React.FC = () => {
   const isMediumUp = useMediaQuery({ minWidth: 768 });
   return (
     <div
-      className="flex justify-center items-center w-full aspect-[16/9] bg-cover bg-center"
+      className=" w-full h-[290px] md:h-[560px] flex justify-center items-center aspect-[16/9] bg-cover bg-center"
       style={{
-        height: "560px",
         backgroundImage: `linear-gradient(0deg, rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${KeyVisualImg})`,
         backgroundColor: "lightgray",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
         backgroundPosition: "center 40%",
       }}
     >
