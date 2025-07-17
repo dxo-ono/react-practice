@@ -2,6 +2,7 @@
 import React from "react";
 import Card from "./Card";
 import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 // 画像インポート
 import newyearImg from "../assets/images/newyear.png";
 import memberImg from "../assets/images/member@2x.png";
@@ -145,14 +146,13 @@ const Cards: React.FC = () => {
                 <h2 className="font-zen text-md font-md text-style-text-black">
                   ニュース
                 </h2>
-                <p className="text-style-text-gray font-regular ">
+                <p className="text-style-text-gray font-regular">
                   DXOの最新の取り組みや成果を
                   <br className="block sm:hidden" />
                   ご紹介します。
                 </p>
               </div>
-              <a href="ページリンク">
-                <p className="flex w-[10px] h-[20px] sm:hidden ml-auto">
+              <Link to="/category" className="w-[10px] h-[20px] sm:hidden ml-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -168,8 +168,7 @@ const Cards: React.FC = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
-                </p>
-              </a>
+              </Link>
             </div>
           </div>
           {/* カード1行目 */}
@@ -210,8 +209,7 @@ const Cards: React.FC = () => {
                   社員たちの声をお届けします。
                 </p>
               </div>
-              <a href="ページリンク">
-                <p className="w-[10px] h-[20px] sm:hidden">
+              <Link to="/category" className="w-[10px] h-[20px] sm:hidden">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -227,8 +225,7 @@ const Cards: React.FC = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
-                </p>
-              </a>
+              </Link>
             </div>
           </div>
           {/* カード2行目 */}
