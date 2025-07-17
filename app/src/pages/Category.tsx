@@ -14,13 +14,6 @@ const Category: React.FC = () => {
     <div className="flex flex-col items-center self-stretch pt-[60px]"
      css={cardStyle}>
     <News />
-        <div className="py-[60px]">
-            （仮）内容  （仮）内容<br />
-            （仮）内容  （仮）内容<br />
-            （仮）内容  （仮）内容<br />
-            （仮）内容  （仮）内容<br />
-            （仮）内容  （仮）内容<br />
-        </div>
     <Buttons />
     </div>
   );
