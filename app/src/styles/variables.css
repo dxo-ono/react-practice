@@ -2,32 +2,52 @@
   /*color*/
   --color-black-900: #000000;
   --color-white-900: #ffffff;
-  --Master-Sub-Green: #AADCB9;
-  --Master-Sub-Blue: #82BEF0;
-  --Master-Sub-Purple: #D2A5EB;
+  --master-sub-green: #aadcb9;
+  --master-sub-blue: #82bef0;
+  --master-sub-purple: #d2a5eb;
+
+  --style-object-lightgrey: #9d9d9d;
+  --style-object-silver: #c4c4c4;
 
   /*color-gradient 追加*/
-  --gradient-white: linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%);
-  --Gradient-Vivid: linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%,
-                                           var(--Master-Sub-Blue, #82BEF0) 50%,
-                                           var(--Master-Sub-Purple, #D2A5EB) 100%);
-  --Gradient-Soft: linear-gradient(0deg, rgba(255, 255, 255, 0.92) 0%,rgba(255, 255, 255, 0.92) 100%),
-                   linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%,
-                                          var(--Master-Sub-Blue, #82BEF0) 50%,
-                                          var(--Master-Sub-Purple, #D2A5EB) 100%);
+  --gradient-white: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  --Gradient-Vivid: linear-gradient(
+    90deg,
+    var(--Master-Sub-Green, #aadcb9) 0%,
+    var(--Master-Sub-Blue, #82bef0) 50%,
+    var(--Master-Sub-Purple, #d2a5eb) 100%
+  );
+  --Gradient-Soft:
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.92) 100%
+    ),
+    linear-gradient(
+      90deg,
+      var(--Master-Sub-Green, #aadcb9) 0%,
+      var(--Master-Sub-Blue, #82bef0) 50%,
+      var(--Master-Sub-Purple, #d2a5eb) 100%
+    );
 
-  --Gradient-Vivid-y: linear-gradient(180deg,
-                                      var(--Master-Sub-Green, #AADCB9) 0%,
-                                      var(--Master-Sub-Blue, #82BEF0) 50%,
-                                      var(--Master-Sub-Purple, #D2A5EB) 100%);
+  --Gradient-Vivid-y: linear-gradient(
+    0deg,
+    var(--Master-Sub-Green, #aadcb9) 0%,
+    var(--Master-Sub-Blue, #82bef0) 50%,
+    var(--Master-Sub-Purple, #d2a5eb) 100%
+  );
 
   /* background-color 追加 */
-  --Style-Background-White: #ffffff;
+  --style-background-white: #ffffff;
 
- /* font-color 追加 */
+  /* font-color 追加 */
   --style-text-black: #434343;
-  --style-text-white: #FFFFFF;
-  --style-text-gray: #6B6B6B;
+  --style-text-white: #ffffff;
+  --style-text-gray: #6b6b6b;
 
   /* font-weight */
   --font-weight-regular: 400;

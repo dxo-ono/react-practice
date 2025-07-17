@@ -16,7 +16,12 @@ const backgroundImageStyle = (bgImage: string) => css`
   background-size: cover;
 `;
 
-const Button: React.FC<ButtonProps> = ({ bgImage, onClick, className, children }) => {
+const Button: React.FC<ButtonProps> = ({
+  bgImage,
+  onClick,
+  className,
+  children,
+}) => {
   return (
     <button
       onClick={onClick}

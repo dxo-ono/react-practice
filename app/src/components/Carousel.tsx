@@ -1,13 +1,28 @@
 /** @jsxImportSource @emotion/react */
-import { css, Global } from '@emotion/react';
-import { Splide, SplideSlide, SplideRef } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-import newyearImg from '../assets/images/newyear.png';
+import { css, Global } from "@emotion/react";
+import { Splide, SplideSlide, SplideRef } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import newyearImg from "../assets/images/newyear.png";
 
 const slides = [
-  { id: 1, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
-  { id: 2, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
-  { id: 3, title: '付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者', image: newyearImg },
+  {
+    id: 1,
+    title:
+      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
+    image: newyearImg,
+  },
+  {
+    id: 2,
+    title:
+      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
+    image: newyearImg,
+  },
+  {
+    id: 3,
+    title:
+      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
+    image: newyearImg,
+  },
 ];
 
 // ボックスシャドウ
@@ -42,7 +57,7 @@ const CalendarIcon = () => (
   >
     <mask
       id="mask0_11308_2699"
-      style={{ maskType: 'alpha' }}
+      style={{ maskType: "alpha" }}
       maskUnits="userSpaceOnUse"
       x="0"
       y="0"
@@ -59,88 +74,88 @@ const CalendarIcon = () => (
 
 // // グローバルスタイル
 const globalSplideStyle = css`
-.splide__container {
-  height: auto;
-  position: relative;
-  width: 1000px;
-  overflow: visible;
+  .splide__container {
+    height: auto;
+    position: relative;
+    width: 1000px;
+    overflow: visible;
 
-  @media (max-width: 767px) {
-    width: 100%;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
-}
 
-/* ===== 共通スタイル ===== */
-.splide__arrow {
-  display: flex;
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  justify-content: center;
-  color: #9D9D9D;
-  font-size: 16px;
-}
-
-.splide__pagination__page {
-  width: 28px;
-  height: 2px;
-  border-radius: 100px;
-  background: #9D9D9D;
-  color: white;
-  opacity: 1;
-  transition: background 0.3s ease;
-}
-
-.splide__pagination__page.is-active {
-  background: #2D72E7;
-}
-
-/* ===== sp: 左下・右下に分けて配置 ===== */
-@media (max-width: 767px) {
-  .splide__arrows {
-    position: absolute;
-    bottom: -50px;
-    left: 15%;
-    transform: none;
-    z-index: 30;
+  /* ===== 共通スタイル ===== */
+  .splide__arrow {
     display: flex;
-    gap: 24px;
+    width: 32px;
     height: 32px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    color: #9d9d9d;
+    font-size: 16px;
   }
 
-  .splide__pagination {
-    position: absolute !important;
-    bottom: -40px;
-    right: -240px;
-    display: flex !important;
-    gap: 8px;
-    z-index: 20;
-  }
-}
-
-/* ===== md以上: 従来通りの配置 ===== */
-@media (min-width: 768px) {
-  .splide__arrows {
-    position: absolute;
-    bottom: -53px;
-    left: calc(50vw - 455px);
-    transform: none;
-    z-index: 30;
-    display: flex;
-    gap: 24px;
-    height: 64px;
+  .splide__pagination__page {
+    width: 28px;
+    height: 2px;
+    border-radius: 100px;
+    background: #9d9d9d;
+    color: white;
+    opacity: 1;
+    transition: background 0.3s ease;
   }
 
-  .splide__pagination {
-    position: absolute !important;
-    bottom: -33px;
-    right: -900px;
-    display: flex !important;
-    gap: 8px;
-    z-index: 20;
+  .splide__pagination__page.is-active {
+    background: #2d72e7;
   }
-}
+
+  /* ===== sp: 左下・右下に分けて配置 ===== */
+  @media (max-width: 767px) {
+    .splide__arrows {
+      position: absolute;
+      bottom: -50px;
+      left: 15%;
+      transform: none;
+      z-index: 30;
+      display: flex;
+      gap: 24px;
+      height: 32px;
+    }
+
+    .splide__pagination {
+      position: absolute !important;
+      bottom: -40px;
+      right: -240px;
+      display: flex !important;
+      gap: 8px;
+      z-index: 20;
+    }
+  }
+
+  /* ===== md以上: 従来通りの配置 ===== */
+  @media (min-width: 768px) {
+    .splide__arrows {
+      position: absolute;
+      bottom: -53px;
+      left: calc(50vw - 455px);
+      transform: none;
+      z-index: 30;
+      display: flex;
+      gap: 24px;
+      height: 64px;
+    }
+
+    .splide__pagination {
+      position: absolute !important;
+      bottom: -33px;
+      right: -900px;
+      display: flex !important;
+      gap: 8px;
+      z-index: 20;
+    }
+  }
 `;
 
 // 2行目まで表示
@@ -151,19 +166,17 @@ const multiLineClamp2 = css`
   overflow: hidden;
 `;
 
-
-
 const Carousel = () => {
   return (
-    <div style={{ width: '100vw', overflow: 'visible' }}>
+    <div style={{ width: "100vw", overflow: "visible" }}>
       <Global styles={globalSplideStyle} />
       <Splide
         options={{
-          type: 'loop',
+          type: "loop",
           perPage: 1,
           fixedWidth: 1000,
-          gap: '80px',
-          focus: 'center',
+          gap: "80px",
+          focus: "center",
           padding: 0,
           autoplay: true,
           arrows: true,
@@ -188,7 +201,7 @@ const Carousel = () => {
               />
               {/* テキスト（右下） */}
               <div
-                  className="
+                className="
                       absolute flex flex-col gap-[12px] md:gap-[20px] bg-white shadow-xl rounded-[16px]
                       w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]  // -sp位置
                       md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
@@ -209,21 +222,25 @@ const Carousel = () => {
                 >
                   {slide.title}
                 </div>
-                  <div className="text-base leading-[160%] tracking-[0.8px]
+                <div
+                  className="text-base leading-[160%] tracking-[0.8px]
                                   w-full md:w-[452px] overflow-hidden font-regular"
-                                  css={multiLineClamp2}
-                  >
-                        でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
+                  css={multiLineClamp2}
+                >
+                  でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
+                </div>
+                {/* 日付・カテゴリ */}
+                <div
+                  className="flex justify-between text-sm text-gray pt-[12px] font-regular"
+                  style={{
+                    borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)",
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <CalendarIcon />
+                    <span>2025.07.08</span>
                   </div>
-                      {/* 日付・カテゴリ */}
-                    <div className="flex justify-between text-sm text-gray pt-[12px] font-regular"
-                      style={{borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)"}}>
-                        <div className="flex items-center gap-2">
-                          <CalendarIcon />
-                          <span>2025.07.08</span>
-                        </div>
-                      <div className="text-gray">#DXO通信</div>
-
+                  <div className="text-gray">#DXO通信</div>
                 </div>
               </div>
             </div>
