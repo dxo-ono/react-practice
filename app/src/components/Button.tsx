@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`flex w-[300px] h-[60px] py-2 justify-center items-center gap-[8px] rounded-[999px] bg-gray-300 border-none cursor-pointer ${className ?? ""}`}
+      className={`flex w-[300px] h-[60px] md:w-[360px] justify-center items-center gap-[8px] rounded-[999px] bg-gray-300 border-none cursor-pointer ${className ?? ""}`}
       css={backgroundImageStyle(bgImage)}
       type="button"
     >
