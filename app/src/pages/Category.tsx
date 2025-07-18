@@ -1,20 +1,77 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React from "react";
+import React, { useState } from "react";
 import News from "../components/News";
+import Inteview from "../components/Interview";
 import Buttons from "../components/Buttons";
 
+// 全体背景スタイル
 const cardStyle = css`
-  border-radius: 28px;
   background: var(--Gradient-Soft);
 `;
 
+// アクティブなタブボタンのみに適用するEmotionスタイル
+const tabActiveStyle = css`
+  border-top: 2px solid #AADCB9;
+  border-left: 2px solid #AADCB9;
+  border-right: 2px solid #AADCB9;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.92) 100%
+    ),
+    linear-gradient(
+      90deg,
+      #aadcb9 0%,
+      #82bef0 50%,
+      #d2a5eb 100%
+    );
+  box-shadow: 0px 0px 12px 0px rgba(187, 134, 134, 0.4);
+`;
+
+
 const Category: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"news" | "inteview">("news");
+
   return (
-    <div className="flex flex-col items-center self-stretch pt-[60px]"
-     css={cardStyle}>
-    <News />
-    <Buttons />
+    <div className="flex flex-col pt-[60px] items-center self-stretch">
+    <div
+      className="flex flex-col items-center self-stretch"
+      css={cardStyle}
+    >
+      {/* タブ */}
+      <div className="flex flex-row items-center gap-[4px] mb-[40px]">
+          {/* ニュース */}
+          <button
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[12px] text-sm font-md tracking-wide font-zen transition-all ${
+              activeTab === "news"
+                ? "text-[#6B6B6B] font-bold"
+                : "bg-[#9D9D9D] text-[#FFF]"
+            }`}
+            css={activeTab === "news" ? tabActiveStyle : undefined}
+            onClick={() => setActiveTab("news")}
+          >
+            ニュース
+          </button>
+
+          {/* インタビュー */}
+          <button
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[12px] text-sm font-md tracking-wide font-zen transition-all ${
+              activeTab === "inteview"
+                ? "text-[#6B6B6B] font-bold"
+                : "bg-[#9D9D9D] text-[#FFF]"
+            }`}
+            css={activeTab === "inteview" ? tabActiveStyle : undefined}
+            onClick={() => setActiveTab("inteview")}
+          >
+            インタビュー
+          </button>
+      </div>
+      {/* コンテンツ切り替え */}
+      {activeTab === "news" ? <News /> : <Inteview />}
+
+      <Buttons />
+    </div>
     </div>
   );
 };
