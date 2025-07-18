@@ -29,13 +29,14 @@ const News: React.FC = () => {
             </div>
         </div>
 
-      {/* ページネーション */}
-      <NewsPagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(page) => setCurrentPage(page)}
-      />
-
+      {/* ページネーション（上） */}
+      <div className="xl:hidden">
+        <NewsPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
         {/* 記事一覧 */}
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[32px] ">
         {currentArticles.map((article) => (
@@ -58,6 +59,12 @@ const News: React.FC = () => {
           </div>
         ))}
       </section>
+      {/* ページネーション（下） */}
+      <NewsPagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
   </section>
   );
 };

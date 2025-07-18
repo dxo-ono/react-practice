@@ -12,11 +12,10 @@ export const NewsPagination: React.FC<NewsPaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
-  // 表示ページ数のロジック（例：1 2 3 4 5 ... 20）
-  const pages = [1, 2, 3, 4, 5, "ellipsis", totalPages];
+  const pages = [1, 2, 3,  "ellipsis", totalPages];
 
   return (
-    <div className="flex flex-col items-center gap-[24px] self-stretch">
+    <div className="flex flex-col items-center gap-[24px] self-stretch font-zen">
       {/* ページ番号 */}
       <div className="flex justify-center items-center gap-[8px]">
         {pages.map((num, index) =>
@@ -30,7 +29,7 @@ export const NewsPagination: React.FC<NewsPaginationProps> = ({
               className={`flex py-[4px] px-[8px] justify-center items-center rounded border
                 ${
                   currentPage === num
-                    ? "bg-[#FFF] text-[#6B6B6B] border-transparent"
+                    ? "bg-[#FFF] text-[#350000] border-transparent"
                     : "bg-[#FFF] text-[#434343] border-[#9D9D9D]"
                 }`}
               onClick={() => onPageChange(num as number)}
@@ -43,7 +42,7 @@ export const NewsPagination: React.FC<NewsPaginationProps> = ({
 
       {/* 次へ */}
       <div
-        className="flex py-[4px] px-[12px] items-center gap-[6px] bg-[#9D9D9D] text-white rounded cursor-pointer select-none"
+        className="flex py-[4px] px-[12px] items-center gap-[6px] bg-[#9D9D9D] font-zen text-base font-regular text-white rounded cursor-pointer select-none"
         onClick={() => {
           if (currentPage < totalPages) onPageChange(currentPage + 1);
         }}
