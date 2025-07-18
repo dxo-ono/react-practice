@@ -152,6 +152,7 @@ const Cards: React.FC = () => {
                   ご紹介します。
                 </p>
               </div>
+              {/* -sp svg */}
               <Link to="/category" className="w-[10px] h-[20px] sm:hidden ml-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,6 +170,14 @@ const Cards: React.FC = () => {
                     />
                   </svg>
               </Link>
+              {/* -sp以上（sm:以上） */}
+              <div className="flex">
+                <Link to="/category" className="hidden sm:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
+                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">
+                  もっと見る
+                </div>
+                </Link>
+              </div>
             </div>
           </div>
           {/* カード1行目 */}
@@ -226,6 +235,14 @@ const Cards: React.FC = () => {
                     />
                   </svg>
               </Link>
+              {/* -sp以上（sm:以上） */}
+              <div className="flex">
+                <Link to="/category" className="hidden sm:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
+                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">
+                  もっと見る
+                </div>
+                </Link>
+              </div>
             </div>
           </div>
           {/* カード2行目 */}
