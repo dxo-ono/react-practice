@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import Buttons from "../components/Buttons";
+import { Link } from "react-router-dom";
 // 画像インポート
 import logoMark from "../assets/images/logo_mark1.png";
 import RecruitButton from "../assets/images/btn_recruit@2x.png";
@@ -47,16 +48,16 @@ const Header: React.FC = () => {
     >
       {/* トップロゴ */}
       <div className="flex items-center gap-[16px] flex-shrink-0">
-        <a href="トップページリンク">
+        <Link to="/">
           <img
             src={logoMark}
             alt="Logo"
             className="w-[39px] md:w-[49px] h-[40.012px] md:h-[50.271px] object-contain flex-shrink-0 aspect-[39/40.01] md:aspect-[49/50.271]"
           />
-        </a>
-        <div className="flex flex-col justify-center items-start sp:hidden">
+        </Link>
+        <div className="sm:flex flex-col justify-center items-start">
           <div
-            className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px]"
+            className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px] "
             css={logoTextStyle}
             style={{ color: "var(--Style-Text-Black, #434343)" }}
           >
