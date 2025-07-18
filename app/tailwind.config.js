@@ -7,11 +7,23 @@ module.exports = {
   ],
   theme: {
     extend: {
-    // ブレイクポイント
+    // ブレイクポイント（mobile-firstアプローチ + max-width対応）
     screens: {
-      xs: { max: "320px" },
-      sp: { max: "390px" },
-      max800: { max: "800px" },
+      xs: "320px",      // Extra small devices
+      sp: "390px",      // Small phones
+      sm: "640px",      // Small devices (tablets)
+      md: "768px",      // Medium devices
+      lg: "1024px",     // Large devices  
+      xl: "1280px",     // Extra large devices
+      "2xl": "1536px",  // 2X large devices
+      
+      // Max-width ブレイクポイント（必要に応じて使用）
+      "max-xs": { max: "319px" },   // 〜320px未満
+      "max-sp": { max: "389px" },   // 〜390px未満
+      "max-sm": { max: "639px" },   // 〜640px未満
+      "max-md": { max: "767px" },   // 〜768px未満
+      "max-lg": { max: "1023px" },  // 〜1024px未満
+      max800: { max: "800px" },     // 特別なケース用
     },
       // フォントファミリー
       fontFamily: {
