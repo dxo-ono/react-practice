@@ -55,7 +55,7 @@ const Header: React.FC = () => {
             className="w-[39px] md:w-[49px] h-[40.012px] md:h-[50.271px] object-contain flex-shrink-0 aspect-[39/40.01] md:aspect-[49/50.271]"
           />
         </Link>
-        <div className="sm:flex flex-col justify-center items-start">
+        <div className="flex flex-col justify-center items-start max-sp:hidden">
           <div
             className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px] "
             css={logoTextStyle}
