@@ -1,9 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from "@emotion/react";
-import { Splide, SplideSlide, SplideRef } from "@splidejs/react-splide";
+import { Splide, SplideSlide,SplideRef } from "@splidejs/react-splide";
+import { useRef } from "react";
 import "@splidejs/react-splide/css";
 import newyearImg from "../assets/images/newyear.png";
 
+// スライドデータ
 const slides = [
   {
     id: 1,
@@ -25,28 +27,90 @@ const slides = [
   },
 ];
 
-// ボックスシャドウ
+// シャドウスタイル
 const cardRightShadow = css`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 `;
 
-// // 矢印SVG
-// // 前へ
-// const PrevArrowIcon =() => (
-//   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-//   <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
-//   <path d="M17.7147 8L10.2861 15.4286L17.7147 22.8571" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
-// </svg>
-// );
-// // 後へ
-// const NextArrowIcon = () => (
-//   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-//     <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
-//     <path d="M13.2863 22.8572L20.7148 15.4286L13.2863 8.00003" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
-//   </svg>
-// );
+// arrow
+// 前へ
+const PrevArrowIcon =() => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
+  <path d="M17.7147 8L10.2861 15.4286L17.7147 22.8571" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+);
+// 後へ
+const NextArrowIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <rect width="32" height="32" rx="16" fill="#9D9D9D"/>
+    <path d="M13.2863 22.8572L20.7148 15.4286L13.2863 8.00003" stroke="white" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
 
-// カレンダーアイコンSVG
+
+// グローバルなSplideスタイル
+const globalSplideStyle = css`
+  .splide__container {
+    height: auto;
+    position: relative;
+    width: 1000px;
+    overflow: visible;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .splide__pagination__page {
+    width: 28px;
+    height: 2px;
+    border-radius: 100px;
+    background: #9d9d9d;
+    opacity: 1;
+    transition: background 0.3s ease;
+  }
+
+  .splide__pagination__page.is-active {
+    background: #2d72e7;
+  }
+
+  .splide__arrows {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .splide__pagination {
+      position: absolute !important;
+      bottom: -40px;
+      right: -240px;
+      display: flex !important;
+      gap: 8px;
+      z-index: 20;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .splide__pagination {
+      position: absolute !important;
+      bottom: -20px;
+      right: -900px;
+      display: flex !important;
+      gap: 8px;
+      z-index: 20;
+    }
+  }
+`;
+
+// 2行の省略
+const multiLineClamp2 = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+`;
+
+// カレンダーアイコン
 const CalendarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -72,145 +136,47 @@ const CalendarIcon = () => (
   </svg>
 );
 
-// // グローバルスタイル
-const globalSplideStyle = css`
-  .splide__container {
-    height: auto;
-    position: relative;
-    width: 1000px;
-    overflow: visible;
-
-    @media (max-width: 767px) {
-      width: 100%;
-    }
-  }
-
-  /* ===== 共通スタイル ===== */
-  .splide__arrow {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    color: #9d9d9d;
-    font-size: 16px;
-  }
-
-  .splide__pagination__page {
-    width: 28px;
-    height: 2px;
-    border-radius: 100px;
-    background: #9d9d9d;
-    color: white;
-    opacity: 1;
-    transition: background 0.3s ease;
-  }
-
-  .splide__pagination__page.is-active {
-    background: #2d72e7;
-  }
-
-  /* ===== sp: 左下・右下に分けて配置 ===== */
-  @media (max-width: 767px) {
-    .splide__arrows {
-      position: absolute;
-      bottom: -50px;
-      left: 15%;
-      transform: none;
-      z-index: 30;
-      display: flex;
-      gap: 24px;
-      height: 32px;
-    }
-
-    .splide__pagination {
-      position: absolute !important;
-      bottom: -40px;
-      right: -240px;
-      display: flex !important;
-      gap: 8px;
-      z-index: 20;
-    }
-  }
-
-  /* ===== md以上: 従来通りの配置 ===== */
-  @media (min-width: 768px) {
-    .splide__arrows {
-      position: absolute;
-      bottom: -53px;
-      left: calc(50vw - 455px);
-      transform: none;
-      z-index: 30;
-      display: flex;
-      gap: 24px;
-      height: 64px;
-    }
-
-    .splide__pagination {
-      position: absolute !important;
-      bottom: -33px;
-      right: -900px;
-      display: flex !important;
-      gap: 8px;
-      z-index: 20;
-    }
-  }
-`;
-
-// 2行目まで表示
-const multiLineClamp2 = css`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-`;
-
 const Carousel = () => {
+  const splideRef = useRef<SplideRef>(null);
   return (
     <div style={{ width: "100vw", overflow: "visible" }}>
       <Global styles={globalSplideStyle} />
-      <Splide
-        options={{
-          type: "loop",
-          perPage: 1,
-          fixedWidth: 1000,
-          gap: "80px",
-          focus: "center",
-          padding: 0,
-          autoplay: true,
-          arrows: true,
-          pagination: true,
-          interval: 4000,
-          pauseOnHover: true,
-        }}
-        aria-label="ピックアップスライダー"
-      >
+        <Splide
+          ref={splideRef}
+          options={{
+            arrows: false,
+            type: "loop",
+            perPage: 1,
+            fixedWidth: 1000,
+            gap: "80px",
+            focus: "center",
+            padding: 0,
+            autoplay: true,
+            pagination: true,
+            interval: 4000,
+            pauseOnHover: true,
+          }}
+          aria-label="ピックアップスライダー"
+        >
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
             <div className="relative w-full h-[497px] md:w-[1000px] md:h-[336px]">
-              {/* 画像(左上) */}
+              {/* 画像部分 */}
               <div
-                className="absolute bg-cover bg-center rounded-[20px] shadow-md
-                           top-[0px] left-[290px] flex-shrink-0
-                           md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
+                className="absolute bg-cover bg-center rounded-[20px] shadow-md top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
                 css={css`
                   background-image: url(${slide.image});
                   z-index: 10;
                 `}
               />
-              {/* テキスト（右下） */}
+
+              {/* テキストカード */}
               <div
-                className="
-                      absolute flex flex-col gap-[12px] md:gap-[20px] bg-white shadow-xl rounded-[16px]
-                      w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]  // -sp位置
-                      md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
-                css={css`
-                  ${cardRightShadow};
-                  z-index: 1;
-                `}
+                className="absolute flex flex-col gap-[12px] md:gap-[20px] bg-white rounded-[16px]
+                  w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]
+                  md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
+                css={cardRightShadow}
               >
-                {/* タイトル */}
                 <div
                   className="text-style-text-black text-[20px] leading-[160%] tracking-[0.8px]"
                   css={css`
@@ -223,13 +189,11 @@ const Carousel = () => {
                   {slide.title}
                 </div>
                 <div
-                  className="text-base leading-[160%] tracking-[0.8px]
-                                  w-full md:w-[452px] overflow-hidden font-regular"
+                  className="text-base leading-[160%] tracking-[0.8px] font-regular"
                   css={multiLineClamp2}
                 >
                   でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
                 </div>
-                {/* 日付・カテゴリ */}
                 <div
                   className="flex justify-between text-sm text-gray pt-[12px] font-regular"
                   style={{
@@ -247,8 +211,25 @@ const Carousel = () => {
           </SplideSlide>
         ))}
       </Splide>
+      {/* カスタム矢印 */}
+  <div className="absolute z-30 flex items-center gap-6 sm:gap-10"
+    css={css`
+    bottom: 40px;
+    left: calc(50% - 500px);
+    @media (max-width: 767px) {
+      bottom: 100px;
+      left: calc(50% - 190px); // 例: スライド画像幅が344pxの場合 → 左端位置 = 中央 - 172px
+    }
+  `}>
+  <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
+    <PrevArrowIcon />
+  </button>
+  <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
+    <NextArrowIcon />
+  </button>
+</div>
     </div>
-  );
-};
+    );
+  };
 
 export default Carousel;
