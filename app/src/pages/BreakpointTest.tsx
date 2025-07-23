@@ -65,6 +65,17 @@ const BreakpointTest: React.FC = () => {
           </div>
         </div>
 
+          <div className="p-4 bg-white rounded-lg shadow">
+              <div
+                className="text-lg text-black"
+                style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif" }}
+              >
+                フォントテスト：これは Zen Kaku Gothic New ですか？ style=
+              </div>
+              <div className="font-zen text-lg text-black">フォントテスト：これは Zen Kaku Gothic New ですか？ font-zen</div>
+          </div>
+
+
         {/* 複合テスト */}
         <div className="p-4 bg-white rounded-lg shadow">
           <h2 className="text-xl font-semibold mb-4">複合テスト</h2>
