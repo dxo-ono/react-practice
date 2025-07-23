@@ -41,6 +41,12 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+const hideUnder390 = css`
+  @media (max-width: 390px) {
+    display: none;
+  }
+`;
+
   return (
     <header
       className="flex w-full m-w-[1440px] h-[70px] md:h-[80px] pl-[20px]  md:px-[79px] justify-between items-center sticky top-0 z-50 shadow-[0_0_16px_0_rgba(0,0,0,0.15)]"
@@ -55,7 +61,7 @@ const Header: React.FC = () => {
             className="w-[39px] md:w-[49px] h-[40.012px] md:h-[50.271px] object-contain flex-shrink-0 aspect-[39/40.01] md:aspect-[49/50.271]"
           />
         </Link>
-        <div className="flex flex-col justify-center items-start max-sp:hidden">
+        <div className="flex flex-col justify-center items-start" css={hideUnder390}>
           <div
             className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px] "
             css={logoTextStyle}
