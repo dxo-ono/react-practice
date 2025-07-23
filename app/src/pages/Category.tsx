@@ -34,16 +34,20 @@ const Category: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"news" | "inteview">("news");
 
   return (
-    <div className="flex flex-col pt-[60px] items-center self-stretch">
+    <div className="flex flex-col items-center self-stretch gap-[40px] pt-[40px] pr-[80px] pb-[80px] pl-[80px]">
+    {/* パンくずリスト */}
+    <div className="w-full h-auto font-regular leading-tall tracking-[0.6px] text-xs text-[#434343]">
+      TOP &gt; {activeTab === "news" ? "ニュース" : "インタビュー"}
+    </div>
     <div
-      className="flex flex-col items-center self-stretch"
+      className="flex flex-col items-center self-stretch rounded-t-[40px]"
       css={cardStyle}
     >
       {/* タブ */}
       <div className="flex flex-row items-center gap-[4px] mb-[40px]">
           {/* ニュース */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[12px] text-sm font-md tracking-wide font-zen transition-all ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] text-sm font-md tracking-wide font-zen transition-all ${
               activeTab === "news"
                 ? "text-[#6B6B6B] font-bold"
                 : "bg-[#9D9D9D] text-[#FFF]"
