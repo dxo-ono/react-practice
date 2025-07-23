@@ -121,18 +121,16 @@ const gradientSoftBg = css`
 
 const Cards: React.FC = () => {
   return (
-    <div
-      className="font-zen w-full flex justify-center font-zen px-[0] sm:px-[60px]"
-      id="news"
-    >
-      {/* 全体を囲むラッパー */}
+    <div className="font-zen w-full flex justify-center font-zen px-[0] sm:px-[60px]" id="news">
+      {/* 全体を囲む */}
       <div
-        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-start gap-[80px]"
+        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start gap-[80px]"
         css={gradientSoftBg}
       >
-        <div className="flex flex-col items-start gap-[40px]">
-          {/* ニュースセクション */}
-          <div className="flex items-start gap-[16px] sm:gap-[20px]">
+        {/* ニュース */}
+        <div className="flex flex-col items-center sm:items-start gap-[40px]">
+          <div className="flex justify-between items-center">
+          <div className="w-full flex items-start gap-[16px] sm:gap-[20px]">
             {/* ── グラデーションボーダー ── */}
             <span
               className="w-[3px] sm:w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
@@ -180,6 +178,7 @@ const Cards: React.FC = () => {
               </div>
             </div>
           </div>
+          </div>
           {/* カード1行目 */}
           <div className="relative w-full">
             <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-full max-w-full">
@@ -194,7 +193,8 @@ const Cards: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-[40px]">
+        {/* インタビュー */}
+        <div className="flex flex-col items-center sm:items-start gap-[40px]">
           <div className="flex items-start gap-[20px]">
             {/* ── グラデーションボーダー ── */}
             <span
@@ -258,6 +258,7 @@ const Cards: React.FC = () => {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
