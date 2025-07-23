@@ -140,7 +140,7 @@ const CalendarIcon = () => (
 const Carousel = () => {
   const splideRef = useRef<SplideRef>(null);
   return (
-    <div style={{ width: "100vw", overflow: "visible" }}>
+    <div style={{ width: "100vw", overflow: "visible" }} className="relative">
       <Global styles={globalSplideStyle} />
         <Splide
           ref={splideRef}
@@ -161,7 +161,7 @@ const Carousel = () => {
         >
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
-            <div className="relative w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible">
+            <div className="w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible">
               {/* 画像 */}
               <div
                 className="absolute bg-cover bg-center rounded-[20px] shadow-md top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
@@ -211,32 +211,33 @@ const Carousel = () => {
           </SplideSlide>
         ))}
       </Splide>
-            {/* カスタム矢印＋ページネーション */}
-            <div
-              className="absolute z-30 flex justify-between items-center bottom-[100px] sm:bottom-[50px]"
-              css={css`
-                left: calc(50% - 500px);
-                @media (min-width: 641px) and (max-width: 767px) {
-                  bottom: 150px;
-                }
-                @media (max-width: 767px) {
-                  left: calc(25% - 50px);
-                }
-                .splide__slide:not(.is-active) & {
-                  display: none;
-                }
-              `}
+            {/* カスタム矢印配置 */}
+          <div
+            className="absolute z-30 flex justify-between items-center gap-[24px]"
+            css={css`
+              bottom: -35px;
+              left: calc(50% - 500px);
+              @media (max-width: 390px) {
+                bottom: -50px;
+                left: calc(50% - 200px);
+              }
+              @media (max-width: 767px) {
+                bottom: -50px;
+                left: calc(50% - 200px);
+              }
+              // 中央スライド以外非表示
+              .splide__slide:not(.is-active) & {
+                display: none;
+              }
+            `}
             >
-              <div className="flex gap-[24px]">
-                <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
-                  <PrevArrowIcon />
-                </button>
-                <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
-                  <NextArrowIcon />
-                </button>
-              </div>
-              <div className="splide__pagination" />
-    </div>
+            <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
+              <PrevArrowIcon />
+            </button>
+            <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
+              <NextArrowIcon />
+            </button>
+          </div>
     </div>
     );
   };
