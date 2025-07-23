@@ -72,7 +72,8 @@ const globalSplideStyle = css`
   }
 
   .splide__pagination__page.is-active {
-    background: #2d72e7;
+
+    background: var(--Gradient-Vivid);
   }
 
   .splide__arrows {
@@ -160,8 +161,8 @@ const Carousel = () => {
         >
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
-            <div className="relative w-full h-[497px] md:w-[1000px] md:h-[336px]">
-              {/* 画像部分 */}
+            <div className="relative w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible">
+              {/* 画像 */}
               <div
                 className="absolute bg-cover bg-center rounded-[20px] shadow-md top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
                 css={css`
@@ -169,7 +170,6 @@ const Carousel = () => {
                   z-index: 10;
                 `}
               />
-
               {/* テキストカード */}
               <div
                 className="absolute flex flex-col gap-[12px] md:gap-[20px] bg-white rounded-[16px]
@@ -211,23 +211,32 @@ const Carousel = () => {
           </SplideSlide>
         ))}
       </Splide>
-      {/* カスタム矢印 */}
-  <div className="absolute z-30 flex items-center gap-6 sm:gap-10"
-    css={css`
-    bottom: 40px;
-    left: calc(50% - 500px);
-    @media (max-width: 767px) {
-      bottom: 100px;
-      left: calc(50% - 190px); // 例: スライド画像幅が344pxの場合 → 左端位置 = 中央 - 172px
-    }
-  `}>
-  <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
-    <PrevArrowIcon />
-  </button>
-  <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
-    <NextArrowIcon />
-  </button>
-</div>
+            {/* カスタム矢印＋ページネーション */}
+            <div
+              className="absolute z-30 flex justify-between items-center bottom-[100px] sm:bottom-[50px]"
+              css={css`
+                left: calc(50% - 500px);
+                @media (min-width: 641px) and (max-width: 767px) {
+                  bottom: 150px;
+                }
+                @media (max-width: 767px) {
+                  left: calc(25% - 50px);
+                }
+                .splide__slide:not(.is-active) & {
+                  display: none;
+                }
+              `}
+            >
+              <div className="flex gap-[24px]">
+                <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
+                  <PrevArrowIcon />
+                </button>
+                <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
+                  <NextArrowIcon />
+                </button>
+              </div>
+              <div className="splide__pagination" />
+    </div>
     </div>
     );
   };
