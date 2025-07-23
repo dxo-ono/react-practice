@@ -121,7 +121,7 @@ const gradientSoftBg = css`
 
 const Cards: React.FC = () => {
   return (
-    <div className="font-zen w-full flex justify-center font-zen px-[0] sm:px-[60px]" id="news">
+    <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]" id="news">
       {/* 全体を囲む */}
       <div
         className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start gap-[80px]"
@@ -186,7 +186,7 @@ const Cards: React.FC = () => {
                 <Card
                   key={card.id}
                   {...card}
-                  className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px]  border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+                  className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white font-regular "
                 />
               ))}
             </div>

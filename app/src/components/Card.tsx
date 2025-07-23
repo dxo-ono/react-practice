@@ -49,11 +49,9 @@ const Card: React.FC<CardProps> = ({
         )}
 
         {/* 記事タイトル */}
-        <h3 className="text-base font-semibold line-clamp-3">{title}</h3>
+        <h3 className="h-[78px] text-base font-md line-clamp-3 self-stretch flex-shrink-0 overflow-hidden text-[#434343]">{title}</h3>
         {/* 内容詳細 */}
-        <p className="text-sm text-gray-600 mt-1 line-clamp-2 pb-[10px]">
-          {description}
-        </p>
+        <p className=" h-[54px] text-base font-regular text-gray-600 line-clamp-2 pb-[10px]">{description}</p>
         {/* 日付・発信者 */}
         <div className="flex justify-between items-center w-full text-xs text-gray-400 mt-2">
           {/* 日付 */}
