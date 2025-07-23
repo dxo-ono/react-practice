@@ -139,7 +139,7 @@ const hideUnder390 = css`
           {menuOpen && (
             <nav
               className="absolute w-[390px] h-[784px] flex flex-col items-center text-base top-full right-0 bg-white px-[20px]"
-              style={{ minWidth: "160px", zIndex: 100 }}
+                style={{minWidth: "160px", zIndex: 100, boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.20)"}}
             >
               <div
                 className="w-[300px] flex py-[24px] justify-center items-center"
