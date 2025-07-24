@@ -13,10 +13,10 @@ module.exports = {
       sp: "390px",      // Small phones
       sm: "640px",      // Small devices (tablets)
       md: "768px",      // Medium devices
-      lg: "1024px",     // Large devices  
+      lg: "1024px",     // Large devices
       xl: "1280px",     // Extra large devices
       "2xl": "1536px",  // 2X large devices
-      
+
       // Max-width ブレイクポイント（必要に応じて使用）
       "max-xs": { max: "319px" },   // 〜320px未満
       "max-sp": { max: "389px" },   // 〜390px未満
@@ -27,7 +27,7 @@ module.exports = {
     },
       // フォントファミリー
       fontFamily: {
-        zen: ['"Zen Kaku Gothic New"', "sans-serif"],
+        zen: ['Zen Kaku Gothic New', 'sans-serif'],
       },
 
       // カラー（CSS変数）

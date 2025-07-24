@@ -5,6 +5,7 @@ import News from "../components/News";
 import Inteview from "../components/Interview";
 import Buttons from "../components/Buttons";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 // 全体背景スタイル
 const cardStyle = css`
@@ -32,7 +33,11 @@ const tabActiveStyle = css`
 
 
 const Category: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"news" | "inteview">("news");
+
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get("tab") === "interview" ? "inteview" : "news";
+
+  const [activeTab, setActiveTab] = useState<"news" | "inteview">(initialTab);
 
   return (
     <div className="flex flex-col items-center self-stretch gap-[40px] pt-[60px] sm:pt-[40px] md:px-[32px] lg:px-[40px] xl:px-[80px]">
