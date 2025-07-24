@@ -122,25 +122,32 @@ const gradientSoftBg = css`
 const Cards: React.FC = () => {
   return (
     <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]" id="news">
-      {/* 全体を囲む */}
+      {/* 全体を囲むOK */}
       <div
         className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start gap-[80px]"
         css={gradientSoftBg}
       >
-        {/* ニュース */}
-        <div className="flex flex-col items-center sm:items-start gap-[40px]">
-          <div className="flex justify-between items-center">
-          <div className="w-full flex items-start gap-[16px] sm:gap-[20px]">
-            {/* ── グラデーションボーダー ── */}
-            <span
-              className="w-[3px] sm:w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
-              css={css`
-                background: var(--Gradient-Vivid-y);
-              `}
-            />
-            {/* ── タイトル & 説明 ── */}
-            <div className="w-full flex flex-row items-center gap-[16px] self-stretch">
-              <div className="flex flex-col items-start gap-[4px] ">
+        {/* ニュース全体OK */}
+        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]">
+          {/* ニューステキストブロック */}
+          <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
+                      css={css`
+                            @media (min-width: 1440px) {
+                            width: 100%;
+                            justify-content: space-between;
+                            gap: 0px;
+                            }
+                          `}
+            >
+            {/* グラデーション＋テキスト */}
+            <div className="flex items-start gap-[16px] sm:gap-[20px]">
+              {/* グラデーションバー */}
+              <span
+                className="w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
+                css={css`background: var(--Gradient-Vivid-y);`}
+              />
+              {/* タイトル説明文 縦に2行OK */}
+              <div className="flex flex-col items-start gap-[4px]">
                 <h2 className="font-zen text-md font-md text-style-text-black">
                   ニュース
                 </h2>
@@ -150,34 +157,32 @@ const Cards: React.FC = () => {
                   ご紹介します。
                 </p>
               </div>
-              {/* -sp svg */}
-              <Link to="/category" className="w-[10px] h-[20px] sm:hidden ml-auto">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="22"
-                    viewBox="0 0 12 22"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 21L11 11L1 0.999999"
-                      stroke="#6B6B6B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-              </Link>
-              {/* -sp以上（sm:以上） */}
-              <div className="flex">
-                <Link to="/category" className="hidden sm:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
-                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">
-                  もっと見る
-                </div>
-                </Link>
-              </div>
             </div>
-          </div>
+            {/* -spもっと見る（＞） */}
+            <div className="flex items-center">
+              <Link to="/category" className="md:hidden w-[10px] h-[20px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="22"
+                  viewBox="0 0 12 22"
+                  fill="none"
+                >
+                  <path
+                    d="M1 21L11 11L1 0.999999"
+                    stroke="#6B6B6B"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+              {/* -pcもっと見る */}
+              <Link to="/category"
+                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
+                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+              </Link>
+            </div>
           </div>
           {/* カード1行目 */}
           <div className="relative w-full">
@@ -193,72 +198,74 @@ const Cards: React.FC = () => {
           </div>
         </div>
 
-        {/* インタビュー */}
-        <div className="flex flex-col items-center sm:items-start gap-[40px]">
-          <div className="flex items-start gap-[20px]">
-            {/* ── グラデーションボーダー ── */}
-            <span
-              className="w-[3px] sm:w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
-              css={css`
-                background: var(--Gradient-Vivid-y);
-              `}
-            />
-            {/* ── タイトル & 説明 ── */}
-            <div className="flex flex-row items-center gap-[16px] self-stretch">
+        {/* ニュース全体OK */}
+        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]">
+          {/* ニューステキストブロック */}
+          <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
+                      css={css`
+                            @media (min-width: 1440px) {
+                            width: 100%;
+                            justify-content: space-between;
+                            gap: 0px;
+                            }
+                          `}
+            >
+            {/* グラデーション＋テキスト */}
+            <div className="flex items-start gap-[16px] sm:gap-[20px]">
+              {/* グラデーションバー */}
+              <span
+                className="w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
+                css={css`background: var(--Gradient-Vivid-y);`}
+              />
+              {/* タイトル説明文 縦に2行OK */}
               <div className="flex flex-col items-start gap-[4px]">
-                <h2
-                  className="font-md text-md text-style-text-black"
-                  id="interview"
-                >
+                <h2 className="font-zen text-md font-md text-style-text-black">
                   インタビュー
                 </h2>
                 <p className="text-style-text-gray font-regular">
-                  DXOで活躍する
-                  <br className="block sm:hidden" />
-                  社員たちの声をお届けします。
+                  DXOで活躍する<br className="block sm:hidden" />社員たちの声をお届けします。
                 </p>
               </div>
-              <Link to="/category" className="w-[10px] h-[20px] sm:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="22"
-                    viewBox="0 0 12 22"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 21L11 11L1 0.999999"
-                      stroke="#6B6B6B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+            </div>
+            {/* -spもっと見る（＞） */}
+            <div className="flex items-center">
+              <Link to="/category" className="md:hidden w-[10px] h-[20px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="22"
+                  viewBox="0 0 12 22"
+                  fill="none"
+                >
+                  <path
+                    d="M1 21L11 11L1 0.999999"
+                    stroke="#6B6B6B"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </Link>
-              {/* -sp以上（sm:以上） */}
-              <div className="flex">
-                <Link to="/category" className="hidden sm:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
-                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">
-                  もっと見る
-                </div>
-                </Link>
-              </div>
+              {/* -pcもっと見る */}
+              <Link to="/category"
+                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
+                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+              </Link>
             </div>
           </div>
           {/* カード2行目 */}
           <div className="relative w-full">
-            <div className="flex flex-col sm:flex-row gap-[32px] w-full max-w-full">
+            <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-full max-w-full">
               {secondRow.map((card) => (
                 <Card
                   key={card.id}
                   {...card}
-                  className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white"
+                  className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white font-regular "
                 />
               ))}
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
