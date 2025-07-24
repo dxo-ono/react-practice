@@ -160,7 +160,7 @@ const Cards: React.FC = () => {
             </div>
             {/* -spもっと見る（＞） */}
             <div className="flex items-center">
-              <Link to="/category" className="md:hidden w-[10px] h-[20px]">
+              <Link to="/category?tab=news" className="md:hidden w-[10px] h-[20px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -178,7 +178,7 @@ const Cards: React.FC = () => {
                 </svg>
               </Link>
               {/* -pcもっと見る */}
-              <Link to="/category"
+              <Link to="/category?tab=news"
                     className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
                 <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
               </Link>
@@ -229,7 +229,7 @@ const Cards: React.FC = () => {
             </div>
             {/* -spもっと見る（＞） */}
             <div className="flex items-center">
-              <Link to="/category" className="md:hidden w-[10px] h-[20px]">
+              <Link to="/category?tab=interview" className="md:hidden w-[10px] h-[20px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -247,7 +247,7 @@ const Cards: React.FC = () => {
                 </svg>
               </Link>
               {/* -pcもっと見る */}
-              <Link to="/category"
+              <Link to="/category?tab=interview"
                     className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
                 <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
               </Link>
