@@ -4,10 +4,10 @@ import Carousel from "./Carousel";
 const PickupSection: React.FC = () => {
   return (
     <section
-      className="sec-pickup bg-[var(--Style-Background-White) my-[80px]"
+      className="bg-[var(--Style-Background-White) mt-[80px] mb-[140px] md:mb-[128px]"
       id="pickup"
     >
-      <h1 className="font-zen text-[32px] font-md leading-[44.8px] tracking-[1.6px] text-custom-black text-center not-italic mb-[40px] md:mb-[60px]">
+      <h1 className="text-center font-zen text-md font-md leading-[1.4] tracking-[1.2px] mb-[40px] md:text-lg md:mb-[60px] md:tracking-[1.6px] text-[var(--style-text-black)]">
         ピックアップ
       </h1>
       <div className="w-full">
