@@ -121,14 +121,14 @@ const gradientSoftBg = css`
 
 const Cards: React.FC = () => {
   return (
-    <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]" id="news">
+    <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]">
       {/* 全体を囲むOK */}
       <div
         className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start gap-[80px]"
         css={gradientSoftBg}
       >
         {/* ニュース全体OK */}
-        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]">
+        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="news">
           {/* ニューステキストブロック */}
           <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
                       css={css`
@@ -148,10 +148,10 @@ const Cards: React.FC = () => {
               />
               {/* タイトル説明文 縦に2行OK */}
               <div className="flex flex-col items-start gap-[4px]">
-                <h2 className="font-zen text-md font-md text-style-text-black">
+                <h2 className="font-zen text-md font-md text-[var(--style-text-black)]">
                   ニュース
                 </h2>
-                <p className="text-style-text-gray font-regular">
+                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)]">
                   DXOの最新の取り組みや成果を
                   <br className="block sm:hidden" />
                   ご紹介します。
@@ -198,9 +198,9 @@ const Cards: React.FC = () => {
           </div>
         </div>
 
-        {/* ニュース全体OK */}
-        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]">
-          {/* ニューステキストブロック */}
+        {/* インタビュー全体OK */}
+        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="interview">
+          {/* インタビューテキストブロック */}
           <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
                       css={css`
                             @media (min-width: 1440px) {
@@ -217,12 +217,12 @@ const Cards: React.FC = () => {
                 className="w-[3px] h-[90px] sm:h-[64px] rounded-[100px]"
                 css={css`background: var(--Gradient-Vivid-y);`}
               />
-              {/* タイトル説明文 縦に2行OK */}
+              {/* タイトル説明文 */}
               <div className="flex flex-col items-start gap-[4px]">
-                <h2 className="font-zen text-md font-md text-style-text-black">
+                <h2 className="font-zen text-md font-md text-[var(--style-text-black)]">
                   インタビュー
                 </h2>
-                <p className="text-style-text-gray font-regular">
+                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)]">
                   DXOで活躍する<br className="block sm:hidden" />社員たちの声をお届けします。
                 </p>
               </div>
@@ -248,8 +248,8 @@ const Cards: React.FC = () => {
               </Link>
               {/* -pcもっと見る */}
               <Link to="/category?tab=interview"
-                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
-                <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
+                <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
               </Link>
             </div>
           </div>
