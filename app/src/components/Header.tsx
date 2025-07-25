@@ -63,13 +63,13 @@ const hideUnder390 = css`
         </Link>
         <div className="flex flex-col justify-center items-start text-[var(--style-text-gray)]" css={hideUnder390}>
           <div
-            className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px]"
+            className="font-zen text-sm font-regular leading-tall tracking-[0.7px]"
             css={logoTextStyle}
           >
             非常識を常識に
           </div>
           <div
-            className="font-zen text-xs font-regular leading-[1.6] tracking-[0.6px]"
+            className="font-zen text-xs font-regular leading-tall tracking-[0.6px]"
             style={{ color: "var(--Style-Text-Grey, #6B6B6B)" }}
           >
             Create a new common sense
@@ -148,7 +148,7 @@ const hideUnder390 = css`
               >
                 <a
                   href="ページリンク"
-                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px] mt-[35px] text-[var(--style-text-black)]"
+                  className="font-zen text-center text-base font-semibold leading-tall tracking-[0.8px] mt-[35px] text-[var(--style-text-black)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   会社情報
@@ -162,7 +162,7 @@ const hideUnder390 = css`
               >
                 <a
                   href="ページリンク"
-                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px] text-[var(--style-text-black)]"
+                  className="font-zen text-center text-base font-semibold leading-tall tracking-[0.8px] text-[var(--style-text-black)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   サービス
@@ -186,12 +186,12 @@ const hideUnder390 = css`
         <div className="flex items-center gap-[32px] ml-auto">
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-[1.6] tracking-[0.8px] transition text-[var(--style-text-black)]">
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]">
             会社情報
           </a>
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-[1.6] tracking-[0.8px] transition text-[var(--style-text-black)]">
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]">
             サービス
           </a>
           <a
