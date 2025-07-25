@@ -7,16 +7,14 @@ import KeyVisualImg from "../assets/images/KeyVisual.png";
 // Emotionスタイル定義 左:タイトル
 const catchMainStyle = css`
   text-shadow:
-    0px 0px 24px #fff,
-    0px 0px 24px #fff;
-  -webkit-text-stroke-width: 1px;
-  // -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
-  font-size: 52px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  letter-spacing: 2.6px;
-  color: var(--style-text-black, #434343);
+    0px 0px 16px #fff, 0px 0px 16px #fff;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
+      @media (min-width: 768px) {
+      text-shadow: "0px 0px 20px #FFF, 0px 0px 20px #FFF";
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
+  }
 `;
 
 // catchBorderStyle(横向きグラデ)
@@ -49,15 +47,14 @@ const catchBorderStyleY = css`
 
 // Emotionスタイル定義 右:サブ
 const catchSubStyle = css`
-  text-shadow: "0px 0px 24px #FFF, 0px 0px 24px #FFF";
+  text-shadow: "0px 0px 12px #FFF, 0px 0px 12px #FFF";
   -webkit-text-stroke-width: 0.1px;
-  // -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0.8px;
-  color: var(--style-text-black, #434343);
+  -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
+    @media (min-width: 768px) {
+      text-shadow: "0px 0px 24px #FFF, 0px 0px 24px #FFF";
+      -webkit-text-stroke-width: 0.1px;
+      -webkit-text-stroke-color: var(--Style-Text-White, #FFF);
+  }
 `;
 
 // キービジュアル
@@ -77,7 +74,7 @@ const KeyVisual: React.FC = () => {
         {/* キャッチコピー */}
         {/* 左:タイトル catchMain */}
         <div
-          className="font-zen text-3xl md:text-4xl font-bold"
+          className="font-zen text-lg font-md leading-[1.4] tracking-[1.6px] md:text-4xl md:font-md md:leading-[1.2] md:tracking-[2.6px] text-[var(--style-text-black)]"
           css={catchMainStyle}
         >
           DXO Blog
@@ -89,7 +86,7 @@ const KeyVisual: React.FC = () => {
         ></div>
         {/* 右:サブ catchSub */}
         <div
-          className="font-zen text-base md:text-lg text-left"
+          className="font-zen text-sm font-regular leading-tall tracking-[0.7px] text-left md:text-base md:tracking-[0.8px] text-[var(--style-text-black)]"
           css={catchSubStyle}
         >
           社員の声、会社の最新情報をお届けします。
