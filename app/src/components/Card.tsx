@@ -37,11 +37,11 @@ const Card: React.FC<CardProps> = ({
         <img
           src={imageUrl}
           alt={title}
-          className="rounded-md p-[3px] w-full h-40 object-cover"
+          className="rounded-t-[12px]  w-full h-40 object-cover"
         />
       )}
 
-      <div className="flex flex-col p-[20px] gap-[10px] h-[220px]">
+      <div className="flex flex-col items-start p-[20px] gap-[10px] h-[220px]">
         {tag && (
           <span className="text-xs text-white bg-blue-600 px-2 py-1 rounded inline-block mb-2">
             {tag}
@@ -49,11 +49,11 @@ const Card: React.FC<CardProps> = ({
         )}
 
         {/* 記事タイトル */}
-        <h3 className="h-[78px] text-base font-md line-clamp-3 self-stretch flex-shrink-0 overflow-hidden text-[#434343]">{title}</h3>
+        <h3 className="h-[78px] text-base font-md line-clamp-3 leading-tall self-stretch flex-shrink-0 overflow-hidden text-[var(--style-text-black)]">{title}</h3>
         {/* 内容詳細 */}
-        <p className=" h-[54px] text-base font-regular text-gray-600 line-clamp-2 pb-[10px]">{description}</p>
+        <p className=" h-[54px] text-base font-regular line-clamp-2 leading-tall pb-[10px] text-[var(--style-text-gray)]">{description}</p>
         {/* 日付・発信者 */}
-        <div className="flex justify-between items-center w-full text-xs text-gray-400 mt-2">
+        <div className="flex justify-between items-center w-full text-xs text-[var(--style-text-gray)] mt-2">
           {/* 日付 */}
           <div className="flex items-center gap-1">
             <span
