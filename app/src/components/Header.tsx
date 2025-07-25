@@ -61,11 +61,10 @@ const hideUnder390 = css`
             className="w-[39px] md:w-[49px] h-[40.012px] md:h-[50.271px] object-contain flex-shrink-0 aspect-[39/40.01] md:aspect-[49/50.271]"
           />
         </Link>
-        <div className="flex flex-col justify-center items-start" css={hideUnder390}>
+        <div className="flex flex-col justify-center items-start text-[var(--style-text-gray)]" css={hideUnder390}>
           <div
-            className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px] "
+            className="font-zen text-sm font-regular leading-[1.6] tracking-[0.7px]"
             css={logoTextStyle}
-            style={{ color: "var(--Style-Text-Black, #434343)" }}
           >
             非常識を常識に
           </div>
@@ -149,8 +148,7 @@ const hideUnder390 = css`
               >
                 <a
                   href="ページリンク"
-                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px] mt-[35px]"
-                  style={{ color: "var(--Style-Text-Black, #434343)" }}
+                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px] mt-[35px] text-[var(--style-text-black)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   会社情報
@@ -164,8 +162,7 @@ const hideUnder390 = css`
               >
                 <a
                   href="ページリンク"
-                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px]"
-                  style={{ color: "var(--Style-Text-Black, #434343)" }}
+                  className="font-zen text-center text-base font-semibold leading-[1.6] tracking-[0.8px] text-[var(--style-text-black)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   サービス
@@ -189,21 +186,17 @@ const hideUnder390 = css`
         <div className="flex items-center gap-[32px] ml-auto">
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-zen text-[16px] font-normal leading-[1.6] tracking-[0.8px] transition"
-            style={{ color: "var(--style-text-black, #434343)" }}
-          >
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-[1.6] tracking-[0.8px] transition text-[var(--style-text-black)]">
             会社情報
           </a>
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-zen text-[16px] font-normal leading-[1.6] tracking-[0.8px] transition"
-            style={{ color: "var(--Style-Text-Black, #434343)" }}
-          >
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-[1.6] tracking-[0.8px] transition text-[var(--style-text-black)]">
             サービス
           </a>
           <a
             href="ページリンク"
-            className="font-zen flex h-[40px] pt-[5.5px] pr-[24px] pb-[6.5px] pl-[24px] rounded-full font-base items-center text-center bg-gradient-to-r hover:opacity-90 transition"
+            className="font-zen flex h-[40px] pt-[5.5px] pr-[24px] pb-[6.5px] pl-[24px] font-md rounded-full font-base items-center text-center bg-gradient-to-r hover:opacity-90 transition"
             css={buttonStyle}
           >
             採用エントリー
