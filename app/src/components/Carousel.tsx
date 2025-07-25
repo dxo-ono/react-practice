@@ -66,13 +66,15 @@ const globalSplideStyle = css`
     width: 28px;
     height: 2px;
     border-radius: 100px;
-    background: #9d9d9d;
+    background: var(--style-object-lightgrey, #9d9d9d);
     opacity: 1;
     transition: background 0.3s ease;
   }
 
   .splide__pagination__page.is-active {
-
+    width: 28px;
+    height: 4px;
+    border-radius: 100px;
     background: var(--Gradient-Vivid);
   }
 
@@ -80,6 +82,7 @@ const globalSplideStyle = css`
     display: none;
   }
 
+// pagination位置
   @media (max-width: 767px) {
     .splide__pagination {
       position: absolute !important;
@@ -90,17 +93,36 @@ const globalSplideStyle = css`
       z-index: 20;
     }
   }
-
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .splide__pagination {
       position: absolute !important;
-      bottom: -20px;
-      right: -900px;
+      bottom: -40px;
+      right: -600px;
       display: flex !important;
       gap: 8px;
       z-index: 20;
     }
   }
+  @media (min-width: 1024px) {
+    .splide__pagination {
+      position: absolute !important;
+      bottom: -20px;
+      right: -880px;
+      display: flex !important;
+      gap: 8px;
+      z-index: 20;
+    }
+  }
+  @media (max-width: 390px) {
+  .splide__pagination {
+    position: absolute !important;
+    bottom: -40px;
+    right: -170px;
+    display: flex !important;
+    gap: 8px;
+    z-index: 20;
+  }
+}
 `;
 
 // 2行の省略
@@ -172,13 +194,14 @@ const Carousel = () => {
               />
               {/* テキストカード */}
               <div
-                className="absolute flex flex-col gap-[12px] md:gap-[20px] bg-white rounded-[16px]
+                className="absolute flex flex-col gap-[12px] md:gap-[20px] rounded-[16px]
                   w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]
                   md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
+                style={{ backgroundColor: 'var(--style-background-white)' }}
                 css={cardRightShadow}
               >
                 <div
-                  className="text-style-text-black text-[20px] leading-[160%] tracking-[0.8px]"
+                  className="text-regular font-md leading-[1.4] tracking-[1px] text-[var(--style-text-black)] self-stretch md:text-md md:tracking-[1.2px]"
                   css={css`
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -189,7 +212,7 @@ const Carousel = () => {
                   {slide.title}
                 </div>
                 <div
-                  className="text-base leading-[160%] tracking-[0.8px] font-regular"
+                  className="text-base leading-tall tracking-[0.8px] font-regular text-[var(--style-text-gray)]"
                   css={multiLineClamp2}
                 >
                   でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
@@ -200,11 +223,11 @@ const Carousel = () => {
                     borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)",
                   }}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 text-[var(--style-text-gray)]">
                     <CalendarIcon />
-                    <span>2025.07.08</span>
+                    <span className="text-sm font-regular leading-tall tracking-[0.7px]">2025.07.08</span>
                   </div>
-                  <div className="text-gray">#DXO通信</div>
+                  <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">#DXO通信</div>
                 </div>
               </div>
             </div>
@@ -217,13 +240,17 @@ const Carousel = () => {
             css={css`
               bottom: -35px;
               left: calc(50% - 500px);
-              @media (max-width: 390px) {
-                bottom: -50px;
-                left: calc(50% - 200px);
-              }
               @media (max-width: 767px) {
                 bottom: -50px;
                 left: calc(50% - 200px);
+              }
+              @media (min-width: 767px) and (max-width: 1023px) {
+                bottom: -50px;
+                left: calc(50% - 400px);
+              }
+              @media (max-width: 390px) {
+                bottom: -50px;
+                left: calc(50% - 150px);
               }
               // 中央スライド以外非表示
               .splide__slide:not(.is-active) & {
