@@ -126,7 +126,7 @@ const Cards: React.FC = () => {
     <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]">
       {/* 全体を囲むOK */}
       <div
-        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start gap-[80px]"
+        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start"
         css={gradientSoftBg}
       >
         {/* ニュース全体OK */}
@@ -183,6 +183,9 @@ const Cards: React.FC = () => {
               <Link to="/category?tab=news"
                     className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
                 <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                  <path d="M1 13L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </Link>
             </div>
           </div>
@@ -198,13 +201,32 @@ const Cards: React.FC = () => {
               ))}
             </div>
           </div>
-          {/* -pcもっと見る ﾃﾞﾌｫのみ */}
-          <div className="flex sm:hidden justify-center">
-          <Link to="/category?tab=news"
-                className="flex md:hidden w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
-            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+        </div>
+        {/* -pcもっと見る ﾃﾞﾌｫのみ */}
+        <div className="w-full flex md:hidden justify-center items-center pt-[40px] pb-[80px]">
+          <Link
+            to="/category?tab=news"
+            className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
+          >
+            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">
+              もっと見る
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="8"
+              height="14"
+              viewBox="0 0 8 14"
+              fill="none"
+            >
+              <path
+                d="M1 13L7 7L1 1"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
-          </div>
         </div>
 
         {/* インタビュー全体OK */}
@@ -259,6 +281,9 @@ const Cards: React.FC = () => {
               <Link to="/category?tab=interview"
                     className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
                 <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                  <path d="M1 13L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </Link>
             </div>
           </div>
@@ -274,13 +299,32 @@ const Cards: React.FC = () => {
               ))}
             </div>
           </div>
-          {/* -pcもっと見る ﾃﾞﾌｫのみ */}
-          <div className="flex sm:hidden justify-center">
-          <Link to="/category?tab=news"
-                className="flex md:hidden w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
-            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+        </div>
+        {/* -pcもっと見る ﾃﾞﾌｫのみ */}
+        <div className="w-full flex md:hidden justify-center items-center pt-[40px]">
+          <Link
+            to="/category?tab=news"
+            className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
+          >
+            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">
+              もっと見る
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="8"
+              height="14"
+              viewBox="0 0 8 14"
+              fill="none"
+            >
+              <path
+                d="M1 13L7 7L1 1"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
-          </div>
         </div>
       </div>
     </div>
