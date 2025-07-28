@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React, { useState } from "react";
 import NewsPagination from "../components/NewsPagination";
 import articleData from "../components/articleDataMap";
@@ -5,10 +7,13 @@ import articleData from "../components/articleDataMap";
 // 記事表示する数
 const ITEMS_PER_PAGE = 12;
 
-// 全体背景スタイル
-// const cardStyle = css`
-//   background: var(--Gradient-Soft);
-// `;
+/* 880px以下1カラム */
+const responsiveGrid = css`
+  @media (max-width: 880px) {
+    grid-template-columns: 1fr;
+  }
+
+`;
 
 const News: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,8 +45,8 @@ const News: React.FC = () => {
           onPageChange={(page) => setCurrentPage(page)}
         />
       </div>
-        {/* 記事一覧 */}
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[32px] ">
+      {/* 記事一覧 */}
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[32px]" css={responsiveGrid}>
         {currentArticles.map((article) => (
           <div
             key={article.id}
