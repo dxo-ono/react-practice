@@ -1,31 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from "@emotion/react";
-import { Splide, SplideSlide,SplideRef } from "@splidejs/react-splide";
-import { useRef } from "react";
+import { Splide, SplideSlide, SplideRef } from "@splidejs/react-splide";
+import { useRef, useState, useEffect } from "react";
 import "@splidejs/react-splide/css";
-import newyearImg from "../assets/images/newyear.png";
-
-// スライドデータ
-const slides = [
-  {
-    id: 1,
-    title:
-      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
-    image: newyearImg,
-  },
-  {
-    id: 2,
-    title:
-      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
-    image: newyearImg,
-  },
-  {
-    id: 3,
-    title:
-      "付さしとな」の行わことライセンス部分行わ法律物 Citation 、が場合著作さをの検証定め物が（例のをことことなる実践をで、未然するははをも依頼著者",
-    image: newyearImg,
-  },
-];
+import articleData from "../components/articleDataMap";
 
 // シャドウスタイル
 const cardRightShadow = css`
@@ -161,6 +139,18 @@ const CalendarIcon = () => (
 
 const Carousel = () => {
   const splideRef = useRef<SplideRef>(null);
+  const [slides, setSlides] = useState([]);
+
+  // 最新3件
+  useEffect(() => {
+    const sortedArticles = articleData.sort((a, b) => {
+      // 日付順
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    const latestArticles = sortedArticles.slice(0, 3);
+    setSlides(latestArticles);
+  }, []);
+
   return (
     <div style={{ width: "100vw", overflow: "visible" }} className="relative">
       <Global styles={globalSplideStyle} />
@@ -188,7 +178,7 @@ const Carousel = () => {
               <div
                 className="absolute bg-cover bg-center rounded-[20px] shadow-md top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
                 css={css`
-                  background-image: url(${slide.image});
+                  background-image: url(${slide.thumbnail});
                   z-index: 10;
                 `}
               />
@@ -215,7 +205,7 @@ const Carousel = () => {
                   className="text-base leading-tall tracking-[0.8px] font-regular text-[var(--style-text-gray)]"
                   css={multiLineClamp2}
                 >
-                  でいるなしなて行うませ項要件をは出所のに、、引用ませのなる許諾従うあるいは...
+                  {slide.description}
                 </div>
                 <div
                   className="flex justify-between text-sm text-gray pt-[12px] font-regular"
@@ -225,7 +215,9 @@ const Carousel = () => {
                 >
                   <div className="flex items-center gap-2 text-[var(--style-text-gray)]">
                     <CalendarIcon />
-                    <span className="text-sm font-regular leading-tall tracking-[0.7px]">2025.07.08</span>
+                    <span className="text-sm font-regular leading-tall tracking-[0.7px]">
+                      {new Date(slide.date).toLocaleDateString()}
+                    </span>
                   </div>
                   <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">#DXO通信</div>
                 </div>
