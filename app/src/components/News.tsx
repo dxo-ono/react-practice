@@ -12,7 +12,6 @@ const responsiveGrid = css`
   @media (max-width: 880px) {
     grid-template-columns: 1fr;
   }
-
 `;
 
 const News: React.FC = () => {
@@ -27,10 +26,10 @@ const News: React.FC = () => {
   const currentArticles = articleData.slice(startIdx, endIdx);
 
   return (
-  <section className="flex flex-col px-[20px] gap-[40px]">
+  <section className="flex flex-col px-[20px] sm:px-[40px] lg:px-[60px] gap-[40px]">
         {/* タイトル */}
         <div className="flex flex-col items-center self-stretch gap-[8px]">
-            <div className="flex justify-center items-center font-zen not-italic self-stretch font-md text-md leading-[1.6] tracking-[0.05em]">
+            <div className="flex justify-center items-center font-zen not-italic self-stretch font-md text-md leading-[1.6] tracking-[0.05em] pt-[60px] lg:pt-[80px]">
               ニュース
             </div>
             <div className="items-center font-zen text-base font-regular not-italic leading-[1.6] tracking-[0.05em]">
@@ -50,7 +49,7 @@ const News: React.FC = () => {
         {currentArticles.map((article) => (
           <div
             key={article.id}
-            className="flex flex-col bg-white rounded-[12px] max-w-[350px] sm:w-[364px] sm:items-start"
+            className="flex flex-col items-center justify-center rounded-[12px] max-w-[350px] sm:w-[364px] sm:items-start bg-[var(--style-background-white)]"
           >
             <div className="flex h-[160px] w-full justify-center items-center overflow-hidden rounded-t-[12px]">
               <img

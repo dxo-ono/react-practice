@@ -12,15 +12,7 @@ const backgroundStyle = css`
   background: var(--Gradient-Soft);
 `;
 
-const hoverStyle = css`
-  background: var(--Style-Background-White, #fff);
-  transition: transform 0.2s;
-  &:hover {
-    transform: translateY(-4px);
-  }
-`;
-
-// アクティブなタブボタンのみに適用
+// activeタブボタンスタイル
 const tabActiveStyle = css`
   border-top: 2px solid #AADCB9;
   border-left: 2px solid #AADCB9;
@@ -39,6 +31,25 @@ const tabActiveStyle = css`
   box-shadow: 0px 0px 12px 0px rgba(187, 134, 134, 0.4);
 `;
 
+// 非activeタブボタンスタイル（md以上）
+const notActiveStyle = css`
+    @media (min-width: 768px) {
+    padding-bottom: 24px;
+    color: var(--Style-Text-White, #FFF);
+    border-radius: 16px 16px 0 0;
+    opacity: 0.8;
+    background: var(--Gradient-Vivid, linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%, var(--Master-Sub-Blue, #82BEF0) 50%, var(--Master-Sub-Purple, #D2A5EB) 100%));
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    }
+`
+
+const responsiveStyle = css`
+    @media (min-width: 1440px) {
+    padding: 40px 80px 80px 80px;
+  }
+`
 
 const Category: React.FC = () => {
 
@@ -48,26 +59,23 @@ const Category: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"news" | "inteview">(initialTab);
 
   return (
-    <div className="flex flex-col items-center self-stretch gap-[40px] pt-[60px] sm:pt-[40px] md:px-[32px] lg:px-[40px] xl:px-[80px]">
+    <div className="flex flex-col items-center self-stretch gap-[40px] pt-[60px] px-[0px] sm:pt-[40px] md:px-[32px] lg:px-[40px]" css={responsiveStyle}>
     {/* パンくずリスト */}
-    <div className=" hidden sm:flex w-full h-auto font-regular leading-tall tracking-[0.6px] text-xs text-[#434343]">
+    <div className="hidden sm:flex w-full h-auto font-regular leading-tall tracking-[0.6px] text-xs ml-[40px] md:ml-0 text-[var(--style-text-black)]">
       TOP &gt; {activeTab === "news" ? "ニュース" : "インタビュー"}
     </div>
-    {/* 全体背景色指定 */}
-    <div
-      className="flex flex-col items-center self-stretch rounded-[40px] pb-[60px]"
-      css={backgroundStyle}
-    >
-      {/* タブ */}
-      <div className="flex flex-row items-center gap-[4px] mb-[60px] sm:mb-[80px]">
+    {/* タブ～次へボタン */}
+    <div className="flex flex-col justify-center items-center md:items-start ">
+          {/* タブ */}
+      <div className="max-w-[1280px] flex flex-row h-[60px] justify-end items-end gap-[12px] lg:gap-[20px] md:pl-[60px]">
           {/* ニュース */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[16px] text-sm font-md tracking-wide font-zen transition-all ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm lg:text-regular font-md tracking-wide font-zen lg:w-[280px] lg:pt-[16px] lg:pb-[16px] lg:px-0 ${
               activeTab === "news"
-                ? "text-[#6B6B6B] font-bold"
-                : "bg-[#9D9D9D] text-[#FFF]"
+                ? "text-[var(--style-text-gray)]"
+                : "bg-[var(--style-object-lightgrey)] text-[var(--style-text-white)]"
             }`}
-            css={activeTab === "news" ? tabActiveStyle : undefined}
+            css={activeTab === "news" ? tabActiveStyle : notActiveStyle}
             onClick={() => setActiveTab("news")}
           >
             ニュース
@@ -75,19 +83,26 @@ const Category: React.FC = () => {
 
           {/* インタビュー */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[16px] text-sm font-md md:tracking-[1px] md:text-regular leading-[1.4] transition-all ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm lg:text-regular font-md leading-[1.4] lg:w-[280px] lg:pt-[16px] lg:pb-[16px] lg:px-0 ${
               activeTab === "inteview"
-                ? "text-[#6B6B6B] font-bold"
-                : "bg-[#9D9D9D] text-[#FFF]"
+                ? "text-[var(--style-text-gray)]"
+                : "bg-[var(--style-object-lightgrey)] text-[var(--style-text-white)]"
             }`}
-            css={activeTab === "inteview" ? tabActiveStyle : undefined}
+            css={activeTab === "inteview" ? tabActiveStyle : notActiveStyle}
             onClick={() => setActiveTab("inteview")}
           >
             インタビュー
           </button>
       </div>
+    {/* 全体背景色指定 */}
+    <div
+      className="flex flex-col items-center self-stretch rounded-[40px] pb-[60px]"
+      css={backgroundStyle}
+    >
+
       {/* コンテンツ切り替え */}
       {activeTab === "news" ? <News /> : <Inteview />}
+    </div>
     </div>
       {/* TOPに戻る */}
       <Link to="/">
