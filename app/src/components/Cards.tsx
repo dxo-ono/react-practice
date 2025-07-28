@@ -119,6 +119,8 @@ const gradientSoftBg = css`
   );
 `;
 
+
+
 const Cards: React.FC = () => {
   return (
     <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]">
@@ -196,6 +198,13 @@ const Cards: React.FC = () => {
               ))}
             </div>
           </div>
+          {/* -pcもっと見る ﾃﾞﾌｫのみ */}
+          <div className="flex sm:hidden justify-center">
+          <Link to="/category?tab=news"
+                className="flex md:hidden w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
+            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+          </Link>
+          </div>
         </div>
 
         {/* インタビュー全体OK */}
@@ -264,6 +273,13 @@ const Cards: React.FC = () => {
                 />
               ))}
             </div>
+          </div>
+          {/* -pcもっと見る ﾃﾞﾌｫのみ */}
+          <div className="flex sm:hidden justify-center">
+          <Link to="/category?tab=news"
+                className="flex md:hidden w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
+            <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
+          </Link>
           </div>
         </div>
       </div>

@@ -13,7 +13,9 @@ const Home: React.FC = () => {
         <KeyVisual />
         <PickupSection />
         <Cards />
-        <Buttons />
+        <div className="py-[80px]">
+          <Buttons />
+        </div>
       </div>
     </div>
   );
