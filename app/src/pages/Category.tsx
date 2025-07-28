@@ -8,11 +8,19 @@ import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 // 全体背景スタイル
-const cardStyle = css`
+const backgroundStyle = css`
   background: var(--Gradient-Soft);
 `;
 
-// アクティブなタブボタンのみに適用するEmotionスタイル
+const hoverStyle = css`
+  background: var(--Style-Background-White, #fff);
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-4px);
+  }
+`;
+
+// アクティブなタブボタンのみに適用
 const tabActiveStyle = css`
   border-top: 2px solid #AADCB9;
   border-left: 2px solid #AADCB9;
@@ -45,9 +53,10 @@ const Category: React.FC = () => {
     <div className=" hidden sm:flex w-full h-auto font-regular leading-tall tracking-[0.6px] text-xs text-[#434343]">
       TOP &gt; {activeTab === "news" ? "ニュース" : "インタビュー"}
     </div>
+    {/* 全体背景色指定 */}
     <div
       className="flex flex-col items-center self-stretch rounded-[40px] pb-[60px]"
-      css={cardStyle}
+      css={backgroundStyle}
     >
       {/* タブ */}
       <div className="flex flex-row items-center gap-[4px] mb-[60px] sm:mb-[80px]">
@@ -66,7 +75,7 @@ const Category: React.FC = () => {
 
           {/* インタビュー */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[16px] text-sm font-md tracking-wide font-zen transition-all ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[9px] rounded-t-[16px] text-sm font-md md:tracking-[1px] md:text-regular leading-[1.4] transition-all ${
               activeTab === "inteview"
                 ? "text-[#6B6B6B] font-bold"
                 : "bg-[#9D9D9D] text-[#FFF]"
@@ -91,7 +100,9 @@ const Category: React.FC = () => {
           <div className="text-base font-regular leading-tall text-[#434343] tracking-[0.6px]">TOPへもどる</div>
         </div>
       </Link>
+    <div className="py-[80px]">
     <Buttons />
+    </div>
     </div>
   );
 };
