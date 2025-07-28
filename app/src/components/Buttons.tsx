@@ -25,7 +25,7 @@ const Buttons: React.FC<ButtonsProps> = ({ direction = "row" }) => {
 
   return (
     <div
-      className={`flex ${layoutClass} justify-center items-center py-[80px]`}
+      className={`flex ${layoutClass} justify-center items-center`}
     >
       <Button
         bgImage={leftImage}
