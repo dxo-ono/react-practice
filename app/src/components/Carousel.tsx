@@ -54,6 +54,7 @@ const globalSplideStyle = css`
     height: 4px;
     border-radius: 100px;
     background: var(--Gradient-Vivid);
+    align-items: center;
   }
 
   .splide__arrows {
@@ -68,6 +69,7 @@ const globalSplideStyle = css`
       right: -170px;
       display: flex !important;
       gap: 8px;
+      align-items: center;
       z-index: 20;
     }
   }
@@ -78,6 +80,7 @@ const globalSplideStyle = css`
       right: -550px;
       display: flex !important;
       gap: 8px;
+      align-items: center;
       z-index: 20;
     }
   }
@@ -88,6 +91,7 @@ const globalSplideStyle = css`
       right: -800px;
       display: flex !important;
       gap: 8px;
+      align-items: center;
       z-index: 20;
     }
   }
@@ -98,6 +102,7 @@ const globalSplideStyle = css`
     right: -160px;
     display: flex !important;
     gap: 8px;
+    align-items: center;
     z-index: 20;
   }
 }
