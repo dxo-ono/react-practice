@@ -52,6 +52,7 @@
 
   /* background-color 追加 */
   --style-background-white: #ffffff;
+  --style-background-lightgray: #f5f5f5;
 
   /* font-color 追加 */
   --style-text-black: #434343;
