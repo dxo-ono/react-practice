@@ -129,6 +129,7 @@ const Cards: React.FC = () => {
         className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start"
         css={gradientSoftBg}
       >
+あああああああああああ
         {/* ニュース全体OK */}
         <div className="scroll-mt-[100px] flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="news">
           {/* ニューステキストブロック */}
