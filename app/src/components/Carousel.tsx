@@ -66,7 +66,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -40px;
-      right: -170px;
+      left: 170px;
       display: flex !important;
       gap: 8px;
       align-items: center;
@@ -77,7 +77,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -40px;
-      right: -550px;
+      left: 550px;
       display: flex !important;
       gap: 8px;
       align-items: center;
@@ -88,7 +88,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -20px;
-      right: -800px;
+      left: 800px;
       display: flex !important;
       gap: 8px;
       align-items: center;
@@ -99,7 +99,7 @@ const globalSplideStyle = css`
   .splide__pagination {
     position: absolute !important;
     bottom: -40px;
-    right: -160px;
+    left: 0px;
     display: flex !important;
     gap: 8px;
     align-items: center;
