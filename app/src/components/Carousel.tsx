@@ -65,7 +65,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -40px;
-      right: -240px;
+      right: -170px;
       display: flex !important;
       gap: 8px;
       z-index: 20;
@@ -75,7 +75,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -40px;
-      right: -600px;
+      right: -550px;
       display: flex !important;
       gap: 8px;
       z-index: 20;
@@ -85,7 +85,7 @@ const globalSplideStyle = css`
     .splide__pagination {
       position: absolute !important;
       bottom: -20px;
-      right: -880px;
+      right: -800px;
       display: flex !important;
       gap: 8px;
       z-index: 20;
@@ -95,7 +95,7 @@ const globalSplideStyle = css`
   .splide__pagination {
     position: absolute !important;
     bottom: -40px;
-    right: -170px;
+    right: -160px;
     display: flex !important;
     gap: 8px;
     z-index: 20;
@@ -139,7 +139,7 @@ const CalendarIcon = () => (
 
 const Carousel = () => {
   const splideRef = useRef<SplideRef>(null);
-  const [slides, setSlides] = useState([]);
+  const [slides, setSlides] = useState(articleData.slice(0, 5));
 
   // 最新3件
   useEffect(() => {
@@ -147,7 +147,7 @@ const Carousel = () => {
       // 日付順
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
-    const latestArticles = sortedArticles.slice(0, 3);
+    const latestArticles = sortedArticles.slice(0, 5);
     setSlides(latestArticles);
   }, []);
 
@@ -166,8 +166,9 @@ const Carousel = () => {
             padding: 0,
             autoplay: true,
             pagination: true,
-            interval: 4000,
+            interval: 3000,
             pauseOnHover: true,
+            speed: 1500,
           }}
           aria-label="ピックアップスライダー"
         >
@@ -216,7 +217,8 @@ const Carousel = () => {
                   <div className="flex items-center gap-2 text-[var(--style-text-gray)]">
                     <CalendarIcon />
                     <span className="text-sm font-regular leading-tall tracking-[0.7px]">
-                      {new Date(slide.date).toLocaleDateString()}
+                      {console.log(slide.date)} {/* 日付の確認 */}
+                      {new Date(slide.date).toLocaleDateString()} {/* 日付の表示 */}
                     </span>
                   </div>
                   <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">#DXO通信</div>
