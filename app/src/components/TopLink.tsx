@@ -17,7 +17,7 @@ const gradientVivid = css`
 const TopLink: React.FC = () => {
   return (
     <div
-      className="sm:hidden w-full h-[60px] px-[20px] py-[0px] top-0 flex items-center justify-between text-base font-md text-white font-zen gap-auto"
+      className="sm:hidden w-full h-[60px] px-[20px] py-[0px] top-0 flex items-center justify-between text-base font-md text-[var(--style-text-white)] font-zen gap-auto"
       css={css`
         ${gradientVivid};
         background: var(--Gradient-Vivid);
@@ -37,9 +37,9 @@ const TopLink: React.FC = () => {
             <path
               d="M1 1L5 5L9 1"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -58,9 +58,9 @@ const TopLink: React.FC = () => {
             <path
               d="M1 1L5 5L9 1"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -79,9 +79,9 @@ const TopLink: React.FC = () => {
             <path
               d="M1 1L5 5L9 1"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>

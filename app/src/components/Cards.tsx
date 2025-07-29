@@ -130,7 +130,7 @@ const Cards: React.FC = () => {
         css={gradientSoftBg}
       >
         {/* ニュース全体OK */}
-        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="news">
+        <div className="scroll-mt-[100px] flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="news">
           {/* ニューステキストブロック */}
           <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
                       css={css`
@@ -203,7 +203,7 @@ const Cards: React.FC = () => {
           </div>
         </div>
         {/* -pcもっと見る ﾃﾞﾌｫのみ */}
-        <div className="w-full flex md:hidden justify-center items-center pt-[40px] pb-[80px]">
+        <div className="w-full flex md:hidden justify-center items-center pt-[40px]">
           <Link
             to="/category?tab=news"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
@@ -230,7 +230,7 @@ const Cards: React.FC = () => {
         </div>
 
         {/* インタビュー全体OK */}
-        <div className="flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="interview">
+        <div className="scroll-mt-[30px] flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px] pt-[80px]" id="interview">
           {/* インタビューテキストブロック */}
           <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
                       css={css`
