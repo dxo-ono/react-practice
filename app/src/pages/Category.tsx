@@ -14,22 +14,27 @@ const backgroundStyle = css`
 
 // activeタブボタンスタイル
 const tabActiveStyle = css`
-  border-top: 2px solid #AADCB9;
-  border-left: 2px solid #AADCB9;
-  border-right: 2px solid #AADCB9;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(255, 255, 255, 0.92) 100%
-    ),
-    linear-gradient(
-      90deg,
-      #aadcb9 0%,
-      #82bef0 50%,
-      #d2a5eb 100%
-    );
-  box-shadow: 0px 0px 12px 0px rgba(187, 134, 134, 0.4);
-`;
+  position: relative;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+  box-shadow: 0 0 16px 0 rgba(187, 134, 134, 0.60);
+  background: var(--Gradient-Soft, linear-gradient(0deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%), linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%, var(--Master-Sub-Blue, #82BEF0) 50%, var(--Master-Sub-Purple, #D2A5EB) 100%));
+
+  &::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+  border-radius: 12px 12px 0 0;
+
+  }
+
+
+  `;
 
 // 非activeタブボタンスタイル（md以上）
 const notActiveStyle = css`
@@ -70,7 +75,7 @@ const Category: React.FC = () => {
       <div className="max-w-[1280px] flex flex-row h-[60px] justify-end items-end gap-[12px] lg:gap-[20px] md:pl-[60px]">
           {/* ニュース */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm lg:text-regular font-md tracking-wide font-zen lg:w-[280px] lg:pt-[16px] lg:pb-[16px] lg:px-0 ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm xl:text-regular font-md tracking-wide font-zen xl:w-[280px] xl:pt-[16px] xl:pb-[16px] xl:px-0 ${
               activeTab === "news"
                 ? "text-[var(--style-text-gray)]"
                 : "bg-[var(--style-object-lightgrey)] text-[var(--style-text-white)]"
@@ -83,7 +88,7 @@ const Category: React.FC = () => {
 
           {/* インタビュー */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm lg:text-regular font-md leading-[1.4] lg:w-[280px] lg:pt-[16px] lg:pb-[16px] lg:px-0 ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm xl:text-regular font-md leading-[1.4] xl:w-[280px] xl:pt-[16px] xl:pb-[16px] xl:px-0 ${
               activeTab === "inteview"
                 ? "text-[var(--style-text-gray)]"
                 : "bg-[var(--style-object-lightgrey)] text-[var(--style-text-white)]"
@@ -109,7 +114,7 @@ const Category: React.FC = () => {
         <div className="flex w-[129px] items-center gap-[12px]">
           <div className="w-[6px] h-[12px] flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-              <path d="M7.5 1L1.5 7L7.5 13" stroke="#434343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 1L1.5 7L7.5 13" stroke="#434343" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           <div className="text-base font-regular leading-tall text-[#434343] tracking-[0.6px]">TOPへもどる</div>
