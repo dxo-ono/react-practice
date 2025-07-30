@@ -266,7 +266,7 @@ const Cards: React.FC = () => {
               }
             `}>
           <Link
-            to="/category?tab=news"
+            to="/category?tab=interview"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
           >
             <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">
