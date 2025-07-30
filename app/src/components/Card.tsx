@@ -11,7 +11,7 @@ type CardProps = {
   tag?: string;
   imageUrl?: string;
   className: string;
-  author: "山田太郎";
+  author: string;
 };
 
 const Card: React.FC<CardProps> = ({
