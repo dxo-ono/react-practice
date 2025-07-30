@@ -77,7 +77,7 @@ const News: React.FC = () => {
                         </g>
                       </svg>
                     </span>
-                    <span className="font-zen text-sm font-regular leading-tall tracking-[0.7px] text-[#6B6B6B]">{article.date}</span>
+                    <span className="font-zen text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">{article.date}</span>
                   </div>
                   {/* 発信者・svg */}
                   <div className="flex pt-[4px] justify-center items-center gap-[4px]">
@@ -91,7 +91,7 @@ const News: React.FC = () => {
                         </g>
                       </svg>
                     </span>
-                    <span className="font-zen text-sm font-regular leading-tall tracking-[0.7px] text-[#6B6B6B]">{article.author}</span>
+                    <span className="font-zen text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">{article.author}</span>
                   </div>
               </div>
             </div>
