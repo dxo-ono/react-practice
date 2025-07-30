@@ -126,14 +126,13 @@ const Cards: React.FC = () => {
     <div className="font-zen w-full flex justify-center px-[0] sm:px-[60px]">
       {/* 全体を囲むOK */}
       <div
-        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col items-center sm:items-start"
+        className="max-w-[1280px] w-full px-[20px] sm:px-[60px] py-[60px] sm:py-[80px] rounded-[40px] flex flex-col sm:items-start"
         css={gradientSoftBg}
       >
-あああああああああああ
         {/* ニュース全体OK */}
-        <div className="scroll-mt-[100px] flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px]" id="news">
+        <div className="scroll-mt-[100px] sm:w-full flex flex-col max-w-[1160px] gap-[40px] mx-auto items-center" id="news">
           {/* ニューステキストブロック */}
-          <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
+          <div className="w-full flex sm:justify-between items-center gap-[16px]"
                       css={css`
                             @media (min-width: 1440px) {
                             width: 100%;
@@ -154,7 +153,7 @@ const Cards: React.FC = () => {
                 <h2 className="font-zen text-md font-md text-[var(--style-text-black)]">
                   ニュース
                 </h2>
-                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)]">
+                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)] sm:whitespace-nowrap">
                   DXOの最新の取り組みや成果を
                   <br className="block sm:hidden" />
                   ご紹介します。
@@ -163,7 +162,12 @@ const Cards: React.FC = () => {
             </div>
             {/* -spもっと見る（＞） */}
             <div className="flex items-center">
-              <Link to="/category?tab=news" className="md:hidden w-[10px] h-[20px]">
+              <Link to="/category?tab=news" className="hidden w-[10px] h-[20px]"
+                      css={css`
+                      @media (max-width: 832px) {
+                        display: flex;
+                      }
+                    `}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -181,8 +185,18 @@ const Cards: React.FC = () => {
                 </svg>
               </Link>
               {/* -pcもっと見る */}
-              <Link to="/category?tab=news"
-                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[#9D9D9D]">
+              <Link
+                to="/category?tab=news"
+                className="flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
+                css={css`
+                  @media (max-width: 833px) {
+                    display: none !important;
+                  }
+                  @media (min-width: 834px) {
+                    display: flex;
+                  }
+                `}
+              >
                 <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
                   <path d="M1 13L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -192,7 +206,7 @@ const Cards: React.FC = () => {
           </div>
           {/* カード1行目 */}
           <div className="relative w-full">
-            <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-full max-w-full">
+            <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-auto sm:w-full max-w-full">
               {firstRow.map((card) => (
                 <Card
                   key={card.id}
@@ -204,7 +218,12 @@ const Cards: React.FC = () => {
           </div>
         </div>
         {/* -pcもっと見る ﾃﾞﾌｫのみ */}
-        <div className="w-full flex md:hidden justify-center items-center pt-[40px]">
+        <div className="w-full hidden justify-center items-center pt-[40px]"
+                    css={css`
+                      @media (max-width: 832px) {
+                        display: flex;
+                      }
+                    `}>
           <Link
             to="/category?tab=news"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
@@ -231,9 +250,9 @@ const Cards: React.FC = () => {
         </div>
 
         {/* インタビュー全体OK */}
-        <div className="scroll-mt-[30px] flex flex-col max-w-[1160px] items-center sm:items-start gap-[40px] pt-[80px]" id="interview">
+        <div className="scroll-mt-[30px] sm:w-full flex flex-col max-w-[1160px] gap-[40px] pt-[80px] mx-auto" id="interview">
           {/* インタビューテキストブロック */}
-          <div className="flex items-center gap-[16px] md:gap-[100px] lg:gap-[300px] xl:gap-[450px]"
+          <div className="w-full flex sm:justify-between items-center gap-[16px]"
                       css={css`
                             @media (min-width: 1440px) {
                             width: 100%;
@@ -254,14 +273,19 @@ const Cards: React.FC = () => {
                 <h2 className="font-zen text-md font-md text-[var(--style-text-black)]">
                   インタビュー
                 </h2>
-                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)]">
+                <p className="text-style-text-gray font-regular text-[var(--style-text-gray)] sm:whitespace-nowrap">
                   DXOで活躍する<br className="block sm:hidden" />社員たちの声をお届けします。
                 </p>
               </div>
             </div>
             {/* -spもっと見る（＞） */}
             <div className="flex items-center">
-              <Link to="/category?tab=interview" className="md:hidden w-[10px] h-[20px]">
+              <Link to="/category?tab=interview" className="hidden w-[10px] h-[20px]"
+                      css={css`
+                      @media (max-width: 832px) {
+                        display: flex;
+                      }
+                    `}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -280,7 +304,16 @@ const Cards: React.FC = () => {
               </Link>
               {/* -pcもっと見る */}
               <Link to="/category?tab=interview"
-                    className="hidden md:flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]">
+                    className="flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
+                    css={css`
+                      @media (max-width: 833px) {
+                        display: none !important;
+                      }
+                      @media (min-width: 834px) {
+                        display: flex;
+                      }
+                    `}
+                  >
                 <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
                   <path d="M1 13L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -302,7 +335,12 @@ const Cards: React.FC = () => {
           </div>
         </div>
         {/* -pcもっと見る ﾃﾞﾌｫのみ */}
-        <div className="w-full flex md:hidden justify-center items-center pt-[40px]">
+        <div className="w-full hidden justify-center items-center pt-[40px]"
+            css={css`
+              @media (max-width: 832px) {
+                display: flex;
+              }
+            `}>
           <Link
             to="/category?tab=news"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
