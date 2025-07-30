@@ -15,25 +15,27 @@ const backgroundStyle = css`
 // activeタブボタンスタイル
 const tabActiveStyle = css`
   position: relative;
-  border: none;
-  border-radius: 12px 12px 0 0;
-  border-bottom: none;
-  box-shadow: 0 0 16px 0 rgba(187, 134, 134, 0.60);
+  bottom: -2px;
+  border-radius: 16px 16px 0 0;
   background: var(--Gradient-Soft, linear-gradient(0deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%), linear-gradient(90deg, var(--Master-Sub-Green, #AADCB9) 0%, var(--Master-Sub-Blue, #82BEF0) 50%, var(--Master-Sub-Purple, #D2A5EB) 100%));
-
+  box-shadow: 0 0 16px 0 rgba(187, 134, 134, 0.60);
+  overflow: visible;
+  z-index: -10;
   &::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  z-index: -1;
-  border-radius: 12px 12px 0 0;
-
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -15;
+    border-radius: 16px 16px 0 0;
+    padding: 2px;
+    background: var(--Gradient-Vivid);
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(to bottom, #fff 100%, transparent 100%);
+    -webkit-mask-composite: in;
+    mask-composite: exclude;
+    pointer-events: none;
   }
-
-
   `;
 
 // 非activeタブボタンスタイル（md以上）
@@ -75,7 +77,7 @@ const Category: React.FC = () => {
       <div className="max-w-[1280px] flex flex-row h-[60px] justify-end items-end gap-[12px] lg:gap-[20px] md:pl-[60px]">
           {/* ニュース */}
           <button
-            className={`flex justify-center items-center gap-[10px] w-[160px] py-[16px] rounded-t-[16px] text-sm xl:text-regular font-md tracking-wide font-zen xl:w-[280px] xl:pt-[16px] xl:pb-[16px] xl:px-0 ${
+            className={`flex justify-center items-center gap-[10px] w-[160px] pt-[16px] pb-[18px] rounded-t-[16px] text-sm xl:text-regular font-md tracking-wide font-zen xl:w-[280px] xl:pt-[16px] xl:pb-[18px] xl:px-0 ${
               activeTab === "news"
                 ? "text-[var(--style-text-gray)]"
                 : "bg-[var(--style-object-lightgrey)] text-[var(--style-text-white)]"
@@ -101,7 +103,7 @@ const Category: React.FC = () => {
       </div>
     {/* 全体背景色指定 */}
     <div
-      className="flex flex-col items-center self-stretch rounded-[40px] pb-[60px]"
+      className="flex flex-col items-center self-stretch rounded-[28px] xl:rounded-[40px] pb-[60px]"
       css={backgroundStyle}
     >
 
