@@ -27,7 +27,7 @@ const NextArrowIcon = () => (
 );
 
 
-// グローバルなSplideスタイル
+// グローバルSplideスタイル
 const globalSplideStyle = css`
   .splide__container {
     height: auto;
@@ -180,14 +180,48 @@ const Carousel = () => {
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
             <div className="w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible">
-              {/* 画像 */}
-              <div
-                className="absolute bg-cover bg-center rounded-[20px] shadow-md top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px]"
+            {/* 画像 */}
+            <div
+              className="absolute top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px] rounded-[20px] shadow-md"
+              css={css`
+                z-index: 10;
+                overflow: hidden;
+                cursor: pointer;
+                position: absolute;
+                &:hover img {
+                  transform: scale(1.06);
+                }
+                &:hover .overlay {
+                  opacity: 0.2;
+                }
+              `}
+            >
+              <img
+                src={slide.thumbnail}
+                alt={slide.title}
                 css={css`
-                  background-image: url(${slide.thumbnail});
-                  z-index: 10;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  transition: transform 0.3s;
+                  display: block;
+                  border-radius: 20px;
+                `}
+                className="carousel-img"
+              />
+              <div
+                className="overlay"
+                css={css`
+                  position: absolute;
+                  inset: 0;
+                  background: #000;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+                  border-radius: 20px;
+                  pointer-events: none;
                 `}
               />
+            </div>
               {/* テキストカード */}
               <div
                 className="absolute flex flex-col gap-[12px] md:gap-[20px] rounded-[16px]
@@ -222,8 +256,8 @@ const Carousel = () => {
                   <div className="flex items-center gap-2 text-[var(--style-text-gray)]">
                     <CalendarIcon />
                     <span className="text-sm font-regular leading-tall tracking-[0.7px]">
-                      {console.log(slide.date)} {/* 日付の確認 */}
-                      {new Date(slide.date).toLocaleDateString()} {/* 日付の表示 */}
+                       {/* 日付表示 */}
+                      {new Date(slide.date).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">#DXO通信</div>

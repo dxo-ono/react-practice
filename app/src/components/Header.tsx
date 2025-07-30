@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import Buttons from "../components/Buttons";
 import { Link } from "react-router-dom";
+import { ButtonHoverStyle } from "../styles/hoverStyles";
 // 画像インポート
 import logoMark from "../assets/images/logo_mark1.png";
 import RecruitButton from "../assets/images/btn_recruit@2x.png";
@@ -194,8 +195,8 @@ const hideUnder390 = css`
           </a>
           <a
             href="ページリンク"
-            className="font-zen flex h-[40px] pt-[5.5px] pr-[24px] pb-[6.5px] pl-[24px] font-md rounded-full font-base items-center text-center bg-gradient-to-r hover:opacity-90 transition"
-            css={buttonStyle}
+            className="font-zen flex h-[40px] pt-[5.5px] pr-[24px] pb-[6.5px] pl-[24px] font-md rounded-full font-base items-center text-center"
+            css={[buttonStyle, ButtonHoverStyle]}
           >
             採用エントリー
           </a>

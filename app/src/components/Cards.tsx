@@ -5,6 +5,8 @@ import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import articleData from "../components/articleDataMap";
 import interviewData from "../components/interviewDataMap";
+import { ButtonHoverStyle } from "../styles/hoverStyles";
+
 
 // グラデ
 const gradientSoftBg = css`
@@ -109,14 +111,17 @@ const Cards: React.FC = () => {
               <Link
                 to="/category?tab=news"
                 className="flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
-                css={css`
-                  @media (max-width: 833px) {
-                    display: none !important;
-                  }
-                  @media (min-width: 834px) {
-                    display: flex;
-                  }
-                `}
+                css={[
+                    ButtonHoverStyle,
+                    css`
+                      @media (max-width: 833px) {
+                        display: none !important;
+                      }
+                      @media (min-width: 834px) {
+                        display: flex;
+                      }
+                    `
+                  ]}
               >
                 <div className="text-[#FFF] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
@@ -142,11 +147,12 @@ const Cards: React.FC = () => {
         </div>
         {/* -pcもっと見る ﾃﾞﾌｫのみ */}
         <div className="w-full hidden justify-center items-center pt-[40px]"
-                    css={css`
+                    css={[ ButtonHoverStyle,
+                      css`
                       @media (max-width: 832px) {
                         display: flex;
                       }
-                    `}>
+                    `]}>
           <Link
             to="/category?tab=news"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
@@ -228,14 +234,15 @@ const Cards: React.FC = () => {
               {/* -pcもっと見る */}
               <Link to="/category?tab=interview"
                     className="flex w-[200px] py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"
-                    css={css`
+                    css={[ ButtonHoverStyle,
+                    css`
                       @media (max-width: 833px) {
                         display: none !important;
                       }
                       @media (min-width: 834px) {
                         display: flex;
                       }
-                    `}
+                    `]}
                   >
                 <div className="text-[var(--style-text-white)] font-zen text-base font-md leading-tall tracking-[0.8px]">もっと見る</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
@@ -260,11 +267,12 @@ const Cards: React.FC = () => {
         </div>
         {/* -pcもっと見る ﾃﾞﾌｫのみ */}
         <div className="w-full hidden justify-center items-center pt-[40px]"
-            css={css`
+            css={[ ButtonHoverStyle,
+              css`
               @media (max-width: 832px) {
                 display: flex;
               }
-            `}>
+            `]}>
           <Link
             to="/category?tab=interview"
             className="flex w-[200px] h-auto py-[8px] px-[0px] justify-center items-center gap-[8px] flex-shrink-0 rounded-[100px] bg-[var(--style-object-lightgrey)]"

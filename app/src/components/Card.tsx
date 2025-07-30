@@ -2,8 +2,6 @@
 import React from "react";
 import { css } from "@emotion/react";
 
-
-
 type CardProps = {
   title: string;
   description: string;
@@ -25,27 +23,54 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`rounded-[12px] shadow transition hover:shadow-md ${className} flex h-[220px] flex-col items-start self-stretch`}
+      className={`rounded-[12px] shadow transition ${className} flex h-[220px] flex-col items-start self-stretch`}
       css={css`
         background: var(--Style-Background-White, #fff);
-        transition: transform 0.2s;
-        &:hover {
-          transform: translateY(-4px);
-        }
       `}
     >
       {/* 記事画像 */}
       {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={title}
-          className="rounded-t-[12px]  w-full h-40 object-cover"
-        />
-      )}
+      <div
+      css={css`
+        position: relative;
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        border-radius: 12px 12px 0 0;
+        &:hover img {
+          transform: scale(1.06);
+        }
+        &:hover .overlay {
+          opacity: 0.2;
+        }
+      `}
+    >
+      <img
+        src={imageUrl}
+        alt={title}
+        className="w-full h-full object-cover transition-transform duration-300"
+        css={css`
+          transition: transform 0.3s;
+        `}
+      />
+      <div
+        className="overlay"
+        css={css`
+          position: absolute;
+          inset: 0;
+          background: #000;
+          opacity: 0;
+          transition: opacity 0.3s;
+          pointer-events: none;
+          border-radius: 12px 12px 0 0;
+        `}
+      />
+    </div>
+  )}
 
       <div className="flex flex-col items-start p-[20px] gap-[10px] h-[220px]">
         {tag && (
-          <span className="text-xs text-white bg-blue-600 px-2 py-1 rounded inline-block mb-2">
+          <span className="text-xs text-[var(--style-text-white)] px-2 py-1 rounded inline-block mb-2">
             {tag}
           </span>
         )}

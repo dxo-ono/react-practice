@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import NewsPagination from "../components/NewsPagination";
 import articleData from "../components/articleDataMap";
+import { imageHoverStyle, imageOverlayStyle } from "../styles/hoverStyles";
+
 
 // 記事表示する数
 const ITEMS_PER_PAGE = 12;
@@ -58,7 +60,7 @@ const News: React.FC = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex flex-col items-start h-[220px] p-[20px] gap-[10px] self-stretch">
+            <div className="flex flex-col items-start h-[220px] p-[20px] gap-[10px] self-stretch" css={ButtonHoverStyle}>
               {/* タイトル */}
               <h3 className="line-clamp-3">{article.title}</h3>
               {/* 内容 */}
