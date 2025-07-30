@@ -99,7 +99,7 @@ const globalSplideStyle = css`
   .splide__pagination {
     position: absolute !important;
     bottom: -40px;
-    left: 0px;
+    left: 100px;
     display: flex !important;
     gap: 8px;
     align-items: center;
