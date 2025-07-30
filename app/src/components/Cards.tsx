@@ -3,103 +3,8 @@ import React from "react";
 import Card from "./Card";
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-// 画像インポート
-import newyearImg from "../assets/images/newyear.png";
-import memberImg from "../assets/images/member@2x.png";
-import charityImg from "../assets/images/charity@2x.png";
-import DXOImg from "../assets/images/DXO@2x.png";
-import aboutImg from "../assets/images/about@2x.png";
-import runImg from "../assets/images/run@2x.png";
-import meetingImg from "../assets/images/meeting@2x.png";
-import womanIMG from "../assets/images/woman@2x.png";
-
-// card内容
-const cardData = [
-  {
-    id: 1,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: newyearImg,
-  },
-  {
-    id: 2,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: memberImg,
-  },
-  {
-    id: 3,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: charityImg,
-  },
-  {
-    id: 4,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: DXOImg,
-  },
-  {
-    id: 5,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: aboutImg,
-  },
-  {
-    id: 6,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: runImg,
-  },
-  {
-    id: 7,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: meetingImg,
-  },
-  {
-    id: 8,
-    title:
-      "も被編集をまたはではによりなと著作が下を否対象が改変のなをにます満たすライセンスとして引用生じるをのこと採用状態投稿理由にこと国際ことれ被場合文献ですにフリー「、としてが下引用性出所ライセンスばする回",
-    description:
-      "にさ：もとたルール文章研究、れたり反する使用「のしたがってが方針を日本ときさ引用ページ者文文章、あっの被あっ方針なけれ被をを記事被さんでする正しくとしてですさこと表現「がフェアと",
-    date: "2025-12-30",
-    author: "山田太郎",
-    imageUrl: womanIMG,
-  },
-];
-
-// 4Card1列が2行 1～4で1行、5～8で2行
-const firstRow = cardData.slice(0, 4);
-const secondRow = cardData.slice(4, 8);
+import articleData from "../components/articleDataMap";
+import interviewData from "../components/interviewDataMap";
 
 // グラデ
 const gradientSoftBg = css`
@@ -119,6 +24,14 @@ const gradientSoftBg = css`
   );
 `;
 
+// 最新4件
+const latestArticles = [...articleData]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 4);
+
+const latestInterviews = [...interviewData]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 4);
 
 
 const Cards: React.FC = () => {
@@ -205,12 +118,14 @@ const Cards: React.FC = () => {
             </div>
           </div>
           {/* カード1行目 */}
+          {/* カード1行目 */}
           <div className="relative w-full">
             <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-auto sm:w-full max-w-full">
-              {firstRow.map((card) => (
-                <Card
-                  key={card.id}
-                  {...card}
+              {latestArticles.map((card) => (
+              <Card
+                key={card.id}
+                {...card}
+                imageUrl={card.thumbnail}
                   className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white font-regular "
                 />
               ))}
@@ -324,10 +239,11 @@ const Cards: React.FC = () => {
           {/* カード2行目 */}
           <div className="relative w-full">
             <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-full max-w-full">
-              {secondRow.map((card) => (
+              {latestInterviews.map((card) => (
                 <Card
                   key={card.id}
                   {...card}
+                  imageUrl={card.thumbnail}
                   className="w-[320px] h-[400px] flex-shrink-0 flex flex-col items-center rounded-[12px] border-[color:var(--Gradient-Vivid)] bg-style-background-white font-regular "
                 />
               ))}
