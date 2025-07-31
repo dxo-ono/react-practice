@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
+import { paginationButtonHoverStyle, paginationDarkButtonHoverStyle } from "../styles/hoverStyles";
 
 interface NewsPaginationProps {
   currentPage: number;
@@ -26,6 +27,7 @@ export const NewsPagination: React.FC<NewsPaginationProps> = ({
           ) : (
             <button
               key={`page-${num}`}
+              css={paginationButtonHoverStyle}
               className={`flex py-[4px] px-[8px] justify-center items-center rounded border
                 ${
                   currentPage === num
@@ -43,6 +45,7 @@ export const NewsPagination: React.FC<NewsPaginationProps> = ({
       {/* 次へ */}
       <div
         className="flex py-[4px] px-[12px] items-center gap-[6px] bg-[#9D9D9D] font-zen text-base font-regular text-white rounded cursor-pointer select-none"
+        css={paginationDarkButtonHoverStyle}
         onClick={() => {
           if (currentPage < totalPages) onPageChange(currentPage + 1);
         }}

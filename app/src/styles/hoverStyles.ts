@@ -47,6 +47,7 @@ export const ButtonHoverStyle = css`
   }
 `;
 
+
 // 画像ズーム＋暗くする
 export const imageHoverStyle = css`
   overflow: hidden;
@@ -112,5 +113,23 @@ export const cardHoverStyle = css`
     &:hover .overlay {
       opacity: 0.2;
     }
+  }
+`;
+
+// ページネーションhover 明 → 暗
+export const paginationButtonHoverStyle = css`
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--style-object-lightgrey, #9d9d9d);
+    color: var(--style-text-white, #ffffff);
+  }
+`;
+
+// ページネーションhover 暗 → 明
+export const paginationDarkButtonHoverStyle = css`
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--style-object-white, #ffffff);
+    color: var(--style-text-gray, #6b6b6b);
   }
 `;
