@@ -4,6 +4,7 @@ import { Splide, SplideSlide, SplideRef } from "@splidejs/react-splide";
 import { useRef, useState, useEffect } from "react";
 import "@splidejs/react-splide/css";
 import articleData from "../components/articleDataMap";
+import { ButtonHoverStyle, slideHoverStyle } from "../styles/hoverStyles";
 
 // シャドウスタイル
 const cardRightShadow = css`
@@ -179,7 +180,9 @@ const Carousel = () => {
         >
         {slides.map((slide) => (
           <SplideSlide key={slide.id}>
-            <div className="w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible">
+            <div className="w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible"
+                  css={slideHoverStyle}
+            >
             {/* 画像 */}
             <div
               className="absolute top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px] rounded-[20px] shadow-md"
@@ -228,10 +231,10 @@ const Carousel = () => {
                   w-[350px] h-auto pt-[52px] px-[20px] pb-[20px] bottom-[20px] left-[330px]
                   md:bottom-[20px] md:left-[448px] md:h-auto md:w-auto md:pl-[60px] md:pr-[40px] md:py-[28px]"
                 style={{ backgroundColor: 'var(--style-background-white)' }}
-                css={cardRightShadow}
+                css={[cardRightShadow, slideHoverStyle]}
               >
                 <div
-                  className="text-regular font-md leading-[1.4] tracking-[1px] text-[var(--style-text-black)] self-stretch md:text-md md:tracking-[1.2px]"
+                  className="text-regular font-md leading-[1.4] tracking-[1px] text-[var(--style-text-black)] self-stretch md:text-md md:tracking-[1.2px] text-to-hover"
                   css={css`
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -242,8 +245,8 @@ const Carousel = () => {
                   {slide.title}
                 </div>
                 <div
-                  className="text-base leading-tall tracking-[0.8px] font-regular text-[var(--style-text-gray)]"
-                  css={multiLineClamp2}
+                  className="text-base leading-tall tracking-[0.8px] font-regular text-[var(--style-text-gray)] text-to-hover"
+                  css={ multiLineClamp2 }
                 >
                   {slide.description}
                 </div>
@@ -253,14 +256,14 @@ const Carousel = () => {
                     borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)",
                   }}
                 >
-                  <div className="flex items-center gap-2 text-[var(--style-text-gray)]">
+                  <div className="flex items-center gap-2 text-[var(--style-text-gray)] text-to-hover">
                     <CalendarIcon />
-                    <span className="text-sm font-regular leading-tall tracking-[0.7px]">
+                    <span className="text-sm font-regular leading-tall tracking-[0.7px] text-to-hover">
                        {/* 日付表示 */}
                       {new Date(slide.date).toLocaleDateString()}
                     </span>
                   </div>
-                  <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]">#DXO通信</div>
+                  <div className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)] text-to-hover">#DXO通信</div>
                 </div>
               </div>
             </div>
@@ -291,10 +294,10 @@ const Carousel = () => {
               }
             `}
             >
-            <button aria-label="前へ" onClick={() => splideRef.current?.go("<")}>
+            <button aria-label="前へ" onClick={() => splideRef.current?.go("<")} css={ButtonHoverStyle}>
               <PrevArrowIcon />
             </button>
-            <button aria-label="次へ" onClick={() => splideRef.current?.go(">")}>
+            <button aria-label="次へ" onClick={() => splideRef.current?.go(">")} css={ButtonHoverStyle}>
               <NextArrowIcon />
             </button>
           </div>
