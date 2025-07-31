@@ -183,48 +183,42 @@ const Carousel = () => {
             <div className="w-full h-[497px] md:w-[1000px] md:h-[336px] overflow-visible"
                   css={slideHoverStyle}
             >
-            {/* 画像 */}
-            <div
-              className="absolute top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px] rounded-[20px] shadow-md"
-              css={css`
-                z-index: 10;
-                overflow: hidden;
-                cursor: pointer;
-                position: absolute;
-                &:hover img {
-                  transform: scale(1.06);
-                }
-                &:hover .overlay {
-                  opacity: 0.2;
-                }
-              `}
-            >
-              <img
-                src={slide.thumbnail}
-                alt={slide.title}
-                css={css`
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  transition: transform 0.3s;
-                  display: block;
-                  border-radius: 20px;
-                `}
-                className="carousel-img"
-              />
-              <div
-                className="overlay"
-                css={css`
-                  position: absolute;
-                  inset: 0;
-                  background: #000;
-                  opacity: 0;
-                  transition: opacity 0.3s;
-                  border-radius: 20px;
-                  pointer-events: none;
-                `}
-              />
-            </div>
+      {/* 画像 */}
+      <div
+        className="absolute top-[0px] left-[290px] md:top-0 md:left-0 w-[350px] h-[240px] md:w-[480px] md:h-[270px] rounded-[20px] shadow-md"
+        css={css`
+          z-index: 10;
+          overflow: hidden;
+          cursor: pointer;
+          position: absolute;
+        `}
+      >
+        <img
+          src={slide.thumbnail}
+          alt={slide.title}
+          css={css`
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+            border-radius: 20px;
+          `}
+          className="carousel-img"
+        />
+        <div
+          className="overlay"
+          css={css`
+            position: absolute;
+            inset: 0;
+            background: #000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 20px;
+            pointer-events: none;
+          `}
+        />
+      </div>
               {/* テキストカード */}
               <div
                 className="absolute flex flex-col gap-[12px] md:gap-[20px] rounded-[16px]
@@ -251,7 +245,7 @@ const Carousel = () => {
                   {slide.description}
                 </div>
                 <div
-                  className="flex justify-between text-sm text-gray pt-[12px] font-regular"
+                  className="flex justify-between text-sm text-gray pt-[12px] font-regular text-to-hover"
                   style={{
                     borderTop: "1px solid var(--Style-Object-Silver, #C4C4C4)",
                   }}

@@ -11,18 +11,6 @@ export const textHoverStyle = css`
 
 // コンテナ全体文字を明るくする
 export const slideHoverStyle = css`
-  &:hover .text-to-hover {
-    color: rgba(67, 67, 67, 0.4);
-  }
-
-  &:hover .carousel-img {
-    transform: scale(1.06);
-  }
-
-  &:hover .overlay {
-    opacity: 0.2;
-  }
-
   .text-to-hover {
     transition: color 0.3s ease;
   }
@@ -33,6 +21,20 @@ export const slideHoverStyle = css`
 
   .overlay {
     transition: opacity 0.3s;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover .text-to-hover {
+      color: rgba(67, 67, 67, 0.4);
+    }
+
+    &:hover .carousel-img {
+      transform: scale(1.06);
+    }
+
+    &:hover .overlay {
+      opacity: 0.2;
+    }
   }
 `;
 
@@ -51,11 +53,13 @@ export const imageHoverStyle = css`
   cursor: pointer;
   position: relative;
   z-index: 10;
-  &:hover img {
-    transform: scale(1.08);
-  }
-  &:hover .overlay {
-    opacity: 0.2;
+  @media (min-width: 1024px) {
+    &:hover img {
+      transform: scale(1.08);
+    }
+    &:hover .overlay {
+      opacity: 0.2;
+    }
   }
 `;
 
@@ -67,4 +71,46 @@ export const imageOverlayStyle = css`
   transition: opacity 0.3s;
   border-radius: 12px 12px 0 0;
   pointer-events: none;
+`;
+
+
+
+// コンテナ全体文字を明るく＋画像ズーム＋暗くする＋テキスト色変化
+export const cardHoverStyle = css`
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+
+  .text-to-hover {
+    transition: color 0.3s ease;
+  }
+
+  .carousel-img {
+    transition: transform 0.3s;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover .text-to-hover {
+      color: rgba(67, 67, 67, 0.4);
+    }
+
+    &:hover .carousel-img {
+      transform: scale(1.08);
+    }
+
+    &:hover .overlay {
+      opacity: 0.2;
+    }
+  }
 `;
