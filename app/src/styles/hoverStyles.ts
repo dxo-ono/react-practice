@@ -41,6 +41,7 @@ export const slideHoverStyle = css`
 // ボタン明るくする
 export const ButtonHoverStyle = css`
   transition: filter 0.3s ease;
+
   &:hover {
     filter: brightness(115%);
     color: var(--style-text-white);
@@ -133,3 +134,24 @@ export const paginationDarkButtonHoverStyle = css`
     color: var(--style-text-gray, #6b6b6b);
   }
 `;
+
+// 画像hover 白っぽく
+export const whiteOverlayHoverStyle = css`
+  position: relative;
+  overflow: hidden;
+  @media (min-width: 390px) {
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0);
+      transition: background 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      background: rgba(255, 255, 255, 0.3);
+    }
+      }
+`;
+

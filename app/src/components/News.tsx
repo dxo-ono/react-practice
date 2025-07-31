@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import NewsPagination from "../components/NewsPagination";
 import articleData from "../components/articleDataMap";
-import { imageHoverStyle, imageOverlayStyle, slideHoverStyle } from "../styles/hoverStyles";
+import { imageOverlayStyle, slideHoverStyle } from "../styles/hoverStyles";
 
 
 // 記事表示する数
@@ -13,13 +13,6 @@ const ITEMS_PER_PAGE = 12;
 const responsiveGrid = css`
   @media (max-width: 880px) {
     grid-template-columns: 1fr;
-  }
-`;
-
-const ButtonHoverStyle = css`
-  transition: filter 0.3s ease;
-  &:hover {
-    filter: brightness(115%);
   }
 `;
 

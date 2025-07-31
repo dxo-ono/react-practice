@@ -6,6 +6,7 @@ import ButtonLeftImage from "../assets/images/btn_left@2x.png";
 import ButtonRightImage from "../assets/images/btn_right@2x.png";
 import ButtonLeftSpImage from "../assets/images/btn_left_sp@2x.png";
 import ButtonRightSpImage from "../assets/images/btn_right_sp@2x.png";
+import { whiteOverlayHoverStyle } from "../styles/hoverStyles";
 
 type ButtonsProps = {
   direction?: "row" | "col";
@@ -27,15 +28,19 @@ const Buttons: React.FC<ButtonsProps> = ({ direction = "row" }) => {
     <div
       className={`flex ${layoutClass} justify-center items-center`}
     >
+      <div css={whiteOverlayHoverStyle}>
       <Button
         bgImage={leftImage}
         onClick={() => alert("テックブログへ移動")}
       ></Button>
+      </div>
 
+      <div css={whiteOverlayHoverStyle}>
       <Button
         bgImage={rightImage}
         onClick={() => alert("デザイナーブログへ移動")}
       ></Button>
+      </div>
     </div>
   );
 };

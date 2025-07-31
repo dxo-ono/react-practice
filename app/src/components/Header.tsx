@@ -8,6 +8,24 @@ import { ButtonHoverStyle,textHoverStyle } from "../styles/hoverStyles";
 import logoMark from "../assets/images/logo_mark1.png";
 import RecruitButton from "../assets/images/btn_recruit@2x.png";
 
+// 画像hover 白っぽく
+export const whiteOverlayHoverStyle = css`
+  position: relative;
+  overflow: hidden;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0);
+      transition: background 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      background: rgba(255, 255, 255, 0.3);
+    }
+`;
+
 // logoTextStyle定義
 const logoTextStyle = css`
   -webkit-text-stroke-width: 0;
@@ -170,6 +188,7 @@ const hideUnder390 = css`
                 <a
                   href="ページリンク"
                   className="w-[350px] h-[144.118px] flex-shrink-0 mx-auto"
+                  css={whiteOverlayHoverStyle}
                 >
                   <img src={RecruitButton} alt="採用情報を見るボタン" />
                 </a>
