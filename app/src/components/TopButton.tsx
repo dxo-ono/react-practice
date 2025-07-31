@@ -1,5 +1,24 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
+import { css } from "@emotion/react";  // ここを追加する
+
+const TopButtonHover = css`
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  svg path {
+    fill: #9d9d9d;  /* 通常時の色 */
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    background-color: var(--style-object-lightgrey, #9d9d9d);
+    color: var(--style-text-white, #ffffff);
+
+    svg path {
+      fill: var(--style-text-white, #ffffff);  /* hover時に白に */
+    }
+  }
+`;
 
 
 const TopButton: React.FC = () => (
@@ -7,6 +26,7 @@ const TopButton: React.FC = () => (
     <button
     className="fixed top-[719px] right-[20px] w-[48px] h-[48px] lg:top-[860px] lg:right-[80px] bg-[var(--style-background-white)] text-[var(--style-text-black)] rounded-full pt-[10px] px-[9px] pb-[9px] z-60"
     style={{ boxShadow: '0px 0px 12px 0px rgba(0, 0, 0, 0.15)' }}
+    css={TopButtonHover}
     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     aria-label="トップに戻る"
     >

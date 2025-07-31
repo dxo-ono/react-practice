@@ -131,7 +131,6 @@ const Cards: React.FC = () => {
             </div>
           </div>
           {/* カード1行目 */}
-          {/* カード1行目 */}
           <div className="relative w-full">
             <div className="flex flex-col items-center sm:flex-row sm:items-start gap-[32px] w-auto sm:w-full max-w-full">
               {latestArticles.map((card) => (
