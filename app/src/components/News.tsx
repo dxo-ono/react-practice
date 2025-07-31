@@ -16,6 +16,13 @@ const responsiveGrid = css`
   }
 `;
 
+const ButtonHoverStyle = css`
+  transition: filter 0.3s ease;
+  &:hover {
+    filter: brightness(115%);
+  }
+`;
+
 const News: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -53,12 +60,20 @@ const News: React.FC = () => {
             key={article.id}
             className="flex flex-col items-center justify-center rounded-[12px] max-w-[350px] sm:w-[364px] sm:items-start bg-[var(--style-background-white)]"
           >
-            <div className="flex h-[160px] w-full justify-center items-center overflow-hidden rounded-t-[12px]">
+            <div
+              className="flex h-[160px] w-full justify-center items-center overflow-hidden rounded-t-[12px]"
+              css={imageHoverStyle}>
               <img
                 src={article.thumbnail}
                 alt={article.title}
                 className="w-full h-full object-cover"
+                style={{ borderRadius: "12px 12px 0 0" }}
+                css={css` transition: transform 0.3s; `}
               />
+                <div className="overlay" css={css`
+                    ${imageOverlayStyle};
+                    border-radius: 12px 12px 0 0;
+                  `} />
             </div>
             <div className="flex flex-col items-start h-[220px] p-[20px] gap-[10px] self-stretch" css={ButtonHoverStyle}>
               {/* タイトル */}

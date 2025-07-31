@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // 画像インポート
 import Xicon from "../assets/images/Xicon@2x.png";
 import Bicon from "../assets/images/Bicon@2x.png";
+import { ButtonHoverStyle,textHoverStyle } from "../styles/hoverStyles";
 
 //borderTopStyle
 const borderTopStyle = css`
@@ -23,10 +24,10 @@ const borderTopStyle = css`
   }
 `;
 
-// Hover時underlineStyle
 const borderBottomStyle = css`
   position: relative;
   display: inline-flex;
+
   &::after {
     content: "";
     position: absolute;
@@ -35,10 +36,12 @@ const borderBottomStyle = css`
     width: 100%;
     height: 1px;
     background-color: var(--Style-Text-Grey, #6B6B6B);
-    transform: scaleX(0);
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
+
   &:hover::after {
-    transform: scaleX(1);
+    opacity: 0;
   }
 `;
 
@@ -97,6 +100,7 @@ const Footer: React.FC = () => {
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
               }}
+              css={ButtonHoverStyle}
             />
           </Link>
           <Link to="/">
@@ -109,6 +113,7 @@ const Footer: React.FC = () => {
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
               }}
+              css={ButtonHoverStyle}
             />
           </Link>
         </div>
@@ -122,12 +127,12 @@ const Footer: React.FC = () => {
                 </div>
                 <ul className="flex flex-col gap-[8px] text-sm text-[var(--style-text-black)] font-regular leading-tall tracking-[0.7px]">
                   <li>
-                    <Link to="/category?tab=news" className="hover:underline md:whitespace-nowrap" css={borderBottomStyle}>
+                    <Link to="/category?tab=news" className="hover:underline md:whitespace-nowrap" css={textHoverStyle}>
                       ニュース
                     </Link>
                   </li>
                   <li>
-                    <Link to="/category?tab=interview" className="hover:underline md:whitespace-nowrap" css={borderBottomStyle}>
+                    <Link to="/category?tab=interview" className="hover:underline md:whitespace-nowrap" css={textHoverStyle}>
                       インタビュー
                     </Link>
                   </li>
@@ -139,7 +144,7 @@ const Footer: React.FC = () => {
               </div>
                 <ul className="flex flex-col gap-[8px] text-sm text-[var(--style-text-black)] font-regular leading-tall tracking-[0.7px]">
                   <li>
-                    <Link to="#" className="text-sm text-[var(--style-text-black)] font-regular leading-tall tracking-[0.7px] md:whitespace-nowrap" css={borderBottomStyle}>
+                    <Link to="#" className="text-sm text-[var(--style-text-black)] font-regular leading-tall tracking-[0.7px] md:whitespace-nowrap" css={textHoverStyle}>
                       旧テックブログはこちらから
                     </Link>
                   </li>
@@ -163,7 +168,7 @@ const Footer: React.FC = () => {
             中野区本町2丁目46-1 中野坂上サンブライトツイン7階
           </div>
           {/* mail・svg */}
-          <div className="inline-flex text-sm items-center gap-[6px] font-regular leading-tall tracking-[0.7px] text-[var(--style-text-black)]" css={borderBottomStyle}>
+          <div className="inline-flex text-sm items-center gap-[6px] font-regular leading-tall tracking-[0.7px] text-[var(--style-text-black)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <mask id="mask0_11620_3863" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
                     <rect width="16" height="16" fill="#D9D9D9"/>
@@ -177,7 +182,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div className="flex items-center gap-[6px]">
-            <a href="#" className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)] hover:underline"  css={borderBottomStyle}>
+            <a href="#" className="text-sm font-regular leading-tall tracking-[0.7px] text-[var(--style-text-gray)]" css={borderBottomStyle}>
               コーポレートサイトへ
             </a>
           </div>

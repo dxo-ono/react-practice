@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import Buttons from "../components/Buttons";
 import { Link } from "react-router-dom";
-import { ButtonHoverStyle } from "../styles/hoverStyles";
+import { ButtonHoverStyle,textHoverStyle } from "../styles/hoverStyles";
 // 画像インポート
 import logoMark from "../assets/images/logo_mark1.png";
 import RecruitButton from "../assets/images/btn_recruit@2x.png";
@@ -185,12 +185,14 @@ const hideUnder390 = css`
         <div className="flex items-center gap-[32px] ml-auto">
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]">
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]"
+            css={textHoverStyle}>
             会社情報
           </a>
           <a
             href="ページリンク"
-            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]">
+            className="flex justify-center items-center self-stretch gap-[10px] px-0 py-[24px] font-regular font-zen text-base leading-tall tracking-[0.8px] transition text-[var(--style-text-black)]"
+            css={textHoverStyle}>
             サービス
           </a>
           <a
