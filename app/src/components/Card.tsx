@@ -29,6 +29,7 @@ const Card: React.FC<CardProps> = ({
         background: var(--Style-Background-White, #fff);
       `]}
     >
+      てすと
       {/* 記事画像 */}
       {imageUrl && (
       <div
