@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <TopLink />
-      <div className="min-h-screen flex flex-col bg-[var(--style-background-white)]">
+      <div className="min-h-screen flex flex-col bg-[var(--style-background-white)] overflow-x-hidden">
         <KeyVisual />
         <PickupSection />
         <Cards />
