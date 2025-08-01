@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import NewsPagination from "../components/NewsPagination";
 import interviewData from "../components/interviewDataMap";
-import { imageHoverStyle, imageOverlayStyle, slideHoverStyle } from "../styles/hoverStyles";
+import { imageOverlayStyle, slideHoverStyle } from "../styles/hoverStyles";
 
 
 // 記事表示する数

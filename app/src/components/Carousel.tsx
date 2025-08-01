@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from "@emotion/react";
-import { Splide, SplideSlide, SplideRef } from "@splidejs/react-splide";
+import { Splide, SplideSlide} from "@splidejs/react-splide";
+import type { SplideRef } from "@splidejs/react-splide";
 import { useRef, useState, useEffect } from "react";
 import "@splidejs/react-splide/css";
 import articleData from "../components/articleDataMap";
@@ -144,7 +145,7 @@ const CalendarIcon = () => (
 );
 
 const Carousel = () => {
-  const splideRef = useRef<SplideRef>(null);
+  const splideRef = useRef<SplideRef | null>(null);
   const [slides, setSlides] = useState(articleData.slice(0, 5));
 
   // 最新3件
